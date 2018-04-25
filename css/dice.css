@@ -1,0 +1,84 @@
+body{
+	background-image: url("background.png");
+}
+#frame{
+    background-color: rgba(240, 240, 240, 0.95);
+}
+#logo{
+    height: 70px;
+    margin-bottom: 20px;
+    margin-top: 20px;  
+}
+#title{
+    height 70px;
+    margin-bottom: 20px;
+    margin-top: 20px;    
+}
+#title h1{
+    text-align: right;
+    font-size: 50px;
+}
+.tileset{
+    padding-left: 0px;
+}
+.tile{
+    float: left;
+    height: 150px;
+    line-height: 130px;
+    list-style: none;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;    
+}
+.tile label{
+    display: block;
+    text-decoration: none;
+    background-color: coral;
+    height: 150px;
+    padding: 10px;
+    font-size: 40px;
+    color: black;
+}
+.tile label:hover{
+    text-decoration: none;
+    color: black;
+    background-color: white
+}
+.tile input{
+    visibility: hidden;
+    position: absolute;
+}
+.tile input:checked{
+    background-color: white;
+}
+#result-frame{
+    height: 600px;
+    width: inherit;
+    overflow: scroll;    
+}
+.result{
+    display: block;
+}
+.dice{
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    margin: 10px;
+    text-align: center;
+    line-height: 70px;
+    background-color: #ddd;
+}
+.dice p{
+    font-size: 50px;
+}
+.total{
+    display: inline-block;
+    height: 70px;
+    width: 300px;
+    text-align: center;
+    line-height: 70px;
+    background-color: #fff;
+}
+.total p{
+    font-size: 50px;
+}

@@ -1,24 +1,57 @@
 <html>
 	<head>
-		<title>Basic Shitposting</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Dice Roller - Chop Floor</title>
+		<link rel="stylesheet" type="text/css" href="css/dice.css">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script type="text/javascript" src="js/dice.js"></script>
 	</head>
 	<body>
-		<a href="index.html">home</a>
-		<div id="content">
-			<h1>Dice Roller</h1>
-			<form>
-				Enter a dice side value<br>
-				<input type="text" name="sideVal" value="6"><br><br>
-				Enter the amount of dice<br>
-				<input type="text" name="diceVal" value="2"><br><br>
-				<input type="submit" value="Roll">
-			</form>
-			<h2>Result</h2>
-			<div id="result">
-			</div>
+		<div id="frame" class="container">
+            <div id="content" class="container">
+                <div id="banner" class="row">
+                    <div class="col-2">
+                        <div>
+                            <a href="index.html"><img id="logo" src="images/logo_main.png"></a>
+                        </div>
+                    </div>
+                    <div id="title" class="col">
+                        <h1>Dice Roller - Chop Floor</h1>
+                    </div>
+                </div>
+                <form id="dice_type">
+                <ul class="tileset row">
+                    <li class="tile col"><label><input type="radio" name="type" value="4" checked="checked">d4</label></li>
+                    <li class="tile col"><label><input type="radio" name="type" value="6">d6</label></li>
+                    <li class="tile col"><label><input type="radio" name="type" value="8">d8</label></li>
+                    <li class="tile col"><label><input type="radio" name="type" value="10">d10</label></li>
+                    <li class="tile col"><label><input type="radio" name="type" value="12">d12</label></li>
+                    <li class="tile col"><label><input type="radio" name="type" value="20">d20</label></li>
+                </ul>
+                </form>
+                <form id="dice_count">
+                <ul class="tileset row">
+                    <li class="tile col"><label><input type="radio" name="count" value="1"checked="checked">1</label></li>
+                    <li class="tile col"><label><input type="radio" name="count" value="2">2</label></li>
+                    <li class="tile col"><label><input type="radio" name="count" value="3">3</label></li>
+                    <li class="tile col"><label><input type="radio" name="count" value="4">4</label></li>
+                    <li class="tile col"><label><input type="radio" name="count" value="5">5</label></li>
+                    <li class="tile col"><label><input type="radio" name="count" value="6">6</label></li>
+                    <li class="tile col"><label><input type="radio" name="count" value="7">7</label></li>
+                    <li class="tile col"><label><input type="radio" name="count" value="8">8</label></li>
+                    <li class="tile col"><label><input type="radio" name="count" value="9">9</label></li>
+                    <li class="tile col"><label><input type="radio" name="count" value="10">10</label></li>
+                </ul>
+                </form>
+                <div class="row">
+                    <div class="col">
+                        <h2>Result</h2>
+                        <div id="result-frame">
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</body>
 <html>
