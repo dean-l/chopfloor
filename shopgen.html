@@ -1,11 +1,11 @@
 <html>
 	<head>
 		<title>Shop Gen - Chop Floor</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/shopgen.css">
         <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<!- <script type="text/javascript" src="js/shopgen.js"></script> 
+		<script type="text/javascript" src="js/shopgen.js"></script> 
 	</head>
 	<body>
         <div id="frame" class="container">
@@ -26,64 +26,109 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="sel1"><h4>Shop Type<h4></h4></label>
-                            <select class="form-control" id="sel1">
-                                <option>Magic Shop</option>
-                                <option>Armoursmith</option>
-                                <option>Weaponsmith</option>
-                                <option>Textiles and Parchments</option>
-                            </select>
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="sel1"><h4>Shop Type<h4></h4></label>
+                                <div class="form-inline">
+                                    <div>
+                                        <button type="button" class="btn" onclick="randomShop()">Random</button>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-control" id="sel1">
+                                            <option value="magic">Magic Shop</option>
+                                            <option value="armour">Armoursmith</option>
+                                            <option value="weapon">Weaponsmith</option>
+                                            <option value="textile">Textiles and Parchments</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn" onclick="generateShop()">New Name</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="sel2"><h4>Proprietor Race</h4></label>
+                                <div class="form-inline">
+                                    <div>
+                                        <button type="button" class="btn" onclick="randomRace()">Random</button>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-control" id="sel2">
+                                            <option>Human</option>
+                                            <option>Gnome</option>
+                                            <option>Half-elf</option>
+                                            <option>Wood Elf</option>
+                                            <option>High Elf</option>
+                                            <option>Jungle Elf</option>
+                                            <option>Dwarf</option>
+                                            <option>Halfling</option>
+                                            <option>Tiefling</option>
+                                            <option>Half-orc</option>
+                                            <option>Dragonborn</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn" onclick="generateRace()">New Name</button>
+                                    </div> 
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="sel2"><h4>Proprietor Race</h4></label>
-                            <select class="form-control" id="sel2">
-                                <option>Human</option>
-                                <option>Gnome</option>
-                                <option>Half-elf</option>
-                                <option>Wood Elf</option>
-                                <option>High Elf</option>
-                                <option>Jungle Elf</option>
-                                <option>Dwarf</option>
-                                <option>Tiefling</option>
-                                <option>Half-orc</option>
-                                <option>Dragomborn</option>
-                            </select>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="sel3"><h4>Shop Class<h4></h4></label>
+                                <div class="form-inline">
+                                    <div>
+                                        <button type="button" class="btn" onclick="randomClass()">Random</button>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-control" id="sel3">
+                                            <option>High</option>
+                                            <option>Middle</option>
+                                            <option>Lower</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn" onclick="generateClass()">Regenerate</button>
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="sel4"><h4>Item Availability</h4></label>
+                                <div class="form-inline">
+                                    <div>
+                                        <button type="button" class="btn" onclick="randomItem()">Random</button>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-control" id="sel4">
+                                            <option>Scarce</option>
+                                            <option>Available</option>
+                                            <option>Plentiful</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn" onclick="generateItem()">New Items</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="sel1"><h4>Shop Class<h4></h4></label>
-                            <select class="form-control" id="sel1">
-                                <option>High</option>
-                                <option>Middle</option>
-                                <option>Lower</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="sel2"><h4>Item Availability</h4></label>
-                            <select class="form-control" id="sel2">
-                                <option>Scarce</option>
-                                <option>Available</option>
-                                <option>Plentiful</option>
-                            </select>
-                        </div>
-                    </div>
+                </form>
+                <br>
+                <button type="button" class="btn" onclick="generate()">Generate</button>
+                <button type="button" class="btn" onclick="randomise()">Randomise</button>
+                <hr>
+                <div id="result">
                 </div>
                 <hr>
-                <div class="row">
-                    <div class="col">
-                        <p>Content</p>
-                    </div>
-                </div>
+                <p>Dean Langton - 2018</p>
             </div>
 		</div>
 	</body>
