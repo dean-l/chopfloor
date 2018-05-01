@@ -8,7 +8,7 @@ var mShopNameList1 = ["Abracapothecary", "Abrakadabra", "Ace High", "Angels", "D
 var mShopNameList2 = ["Adorable", "Affordable", "Aggressive", "Amazing", "Amusing", "Ancient", "Angry", "Antique", "Awesome", "Awkward", "Baby", "Bathing", "Big", "Bigger", "Bitter", "Ebon", "Bleeding", "Blind", "Blushing", "Brass", "Bright", "Brilliant", "Bronze", "Brown", "Cheap", "Cheating", "Cheering", "Clean", "Clever", "Common", "Corrupt", "Corrupted", "Crafty", "Crazy", "Creeping", "Cuddly", "Curly", "Dancing", "Dapper", "Dark", "Dirty", "Dizzy", "Dreaming", "Eager", "Early", "Elder", "Elegant", "Elementary", "Evil", "Exalted", "Expert", "Fading", "Fair", "Fake", "False", "Famous", "Fancy", "Fantastic", "Fast", "Flimsy", "Fluffy", "Forsaken", "Frozen", "Gentle", "Glass", "Glowing", "Golden", "Graceful", "Greedy", "Green", "Grim", "Grumpy", "Hairy", "Happy", "Haunting", "Heavy", "Hidden", "Huge", "Humble", "Hungry", "Invincible", "Invisible", "Iron", "Jolly", "Kind", "Large", "Last", "Laughing", "Lazy", "Light", "Little", "Lonely", "Loving", "Lucky", "Mad", "Majestic", "Mellow", "Merry", "Naughty", "Needy", "New", "Nutty", "Old", "Phony", "Plain", "Pretty", "Quick", "Quiet", "Rapid", "Rare", "Royal", "Scary", "Screaming", "Second", "Secret", "Serene", "Shady", "Silly", "Silver", "Sleeping", "Small", "Sneaky", "Steel", "Storm", "Striped", "Tall", "Thunder", "Tiny", "Tired", "Weeping", "Wicked", "Wild", "Wise"];
 var mShopNameList3 = ["Amulet", "Angel", "Artifact", "Banshee", "Basilisk", "Beacon", "Bigfoot", "Blade", "Book", "Boots", "Branch", "Bunyip", "Cauldron", "Centaur", "Cerberus", "Chimera", "Chupacabra", "Cloak", "Cockatrice", "Codex", "Crown", "Cupid", "Cyclops", "Demon", "Dragon", "Draugr", "Dryad", "Dwarf", "Elemental", "Elf", "Ent", "Fairy", "Faun", "Feathered Serpent", "Focus", "Gargoyle", "Gauntlet", "Genie", "Ghost", "Giant", "Gnome", "Gorgon (Medussa)", "Gremlin", "Griffin", "Grim Reaper", "Hag", "Harpy", "Hellhound", "Hippocampus", "Hippogriff", "Hobbit", "Hobgoblin", "Hourglass", "Human", "Hydra", "Imp", "Incubus/Succubus", "Jackalope", "Key", "Kobold", "Kraken", "Leprechaun", "Lich", "Lute", "Manticore", "Marker", "Mermaid", "Minotaur", "Mummy", "Naga", "Nymph", "Ogre", "Orb", "Pegasus", "Phoenix", "Pixie", "Poltergeist", "Quill", "Ring", "Robe", "Roc", "Rune", "Sandman", "Sasquatch", "Satyr", "Scepter", "Scroll", "Seal", "Shapeshifter", "Shield", "Siren", "Skeleton", "Skull", "Sphere", "Sphinx", "Spriggan", "Sprite", "Staff", "Stone", "Sword", "Talisman", "Tiara", "Tome", "Troll", "Unicorn", "Valkyrie", "Vampire", "Vial", "Wand", "Wendigo", "Werecat", "Werewolf", "White Stag", "Winged Lion", "Winged Unicorn", "Wisp", "Wolpertinger", "World Turtle", "Wraith", "Wyvern", "Yeti", "Zombie"];
 var aShopNameList = ["Armoursmith Name 1", "Armoursmith Name 2", "Armoursmith Name 3", "Armoursmith Name 4", "Armoursmith Name 5", "Armoursmith Name 6", "Armoursmith Name 7", "Armoursmith Name 8"];
-var wShopNameList = ["Weaponsmith Name 1", "Weaponsmith Name 2", "Weaponsmith Name 3", "Weaponsmith Name 4", "Weaponsmith Name 5", "Weaponsmith Name 6", "Weaponsmith Name 7", "Weaponsmith Name 8"];
+var wShopNameList = ["A Steel","Adore Ore","Anvil Crafts","Anvil Mastery","Anvil Works","Anything Metal","Arms of Steel","Ball of Fire","Balls of Fire","Baptisms of Fire","Bars of Steel","Beat the Heat","Beats of Fire","Belly Fires","Between Hammer and Anvil","Blackstone Forge","Blazing Blacksmiths","Blazing Glory","Blazing Trails","Bloodbath & Beyond","Blue Blazes","Blue Steel","Breathing Fire","By Hammer and Hand","By Hammer and Tongs","Clamor Glamor","Clamorize","Clink 'n Clank","Clobbering Time","Curious Forge","Dame of Flame","Fame of Flame","Fire & Brimstone","Fire It Up","Flame of Fame","Flux Crux","Flux Deluxe","Forge and Fabricate","Forge away","Forging Ahead","Forging Matters","George's Forge","Gorge 'n Forge","Hammer 'n Anvil","Hammer Clamor","Hammer Down","Hammer Glamor","Hammer Home","Hammer It Hot","Hammer Out","Hammer Time","Hammer and Metal","Hammer and Tongs","Hammer in Hand","He Who Smelt It","Heat Up","Heat of the Moment","Heavy Metal Works","Heavy Metals","Hot Hammer","Hot Hot Hot","Hot Iron","Hot Rod","Hot Spot","Hot Stuff","Hot diggety dog!","Hot diggety!","Hot-Shot","In Flux","Ingot This","Iron Designs","Iron Man","Iron Woman","Iron in the Fire","Ironclad","Just Enough Irons","Like Moths","Making It Hot","Matter of Metal","Metal Accent","Metal Arts","Metal Expertise","Metal Fabrications","Metal Mania","Metal Maniac","Metal Mastery","Metal Pandemonium","Metal Trades","Metal Works","Metallurgy","Metalworks","Metalworks of Art","Mind Over Matter","Mind Over Metal","Mineral Minded","Mineral Works","Mr Smith","Mrs Smith","Nerves of Steel","Nice Ring To It","Ore Decor","Ore Else","Ore Galore","Ore Really","Ore Restore","Ore Store","Parent Rock","Phoenix Fire","Pound World","Real Steel","Ring to It","Rings True","Smelt Art","Smelt My Hearth","Smelt in my Arms","Smelting Pot","Smelts of Heaven","Smelts of Roses","Smite Thee","Smith Thee","Smithen","Smitten","Sparks and Flames","Squeal of Steel","Steel Appeal","Steel Arms","Steel Base","Steel Fabrications","Steel Ideal","Steel Show","Steel Thunder","Steel Wings","Stop! Hammer Time","Striking Hot","Sword in the Forge","Sword in the Stone"," Ancient Anvil"," Blacksmith's Forge"," Clamor Shop"," Clank Tank"," Clinker Shop"," Cobalt Forge"," Eternal Flame"," Fire Spire"," Fire Squire"," Flame Game"," Gorge Forge"," Heat is On"," Hot Forge"," Hot Ticket"," Inferno Forge"," Iron's Hot"," Metal Petal"," Phoenix Forge"," Right Clank"," Smelt Belt"," Smelt Celt"," Smith Myth"," Smithy"," Storm Forge"," Tilted Anvil"," Unbreakable Anvil","re Be Smoke","True as Steel","Under Construction","While the Iron's Hot","Young Flames"];
 var tShopNameList = ["Textile Shop Name 1", "Textile Shop Name 2", "Textile Shop Name 3", "Textile Shop Name 4", "Textile Shop Name 5", "Textile Shop Name 6", "Textile Shop Name 7", "Textile Shop Name 8"];
 
 var raceNameList = ["Human", "Gnome", "Half-elf", "Wood Elf", "High Elf", "Jungle Elf", "Dwarf", "Halfling", "Tiefling", "Half-orc", "Dragomborn"];
@@ -29,7 +29,7 @@ var mItemNameList = [["Potion of climbing", "Common"], ["Potion of healing", "Co
 ["Apparatus of Kwalish", "Legendary"], ["Armor +3", "Legendary"], ["Armor of invulnerability", "Legendary"], ["Belt of giant strength (cloud giant)", "Legendary"], ["Belt of giant strength (storm giant)", "Legendary"], ["Cloak of invisibility", "Legendary"], ["Crystal ball", "Legendary"], ["Cubic gate", "Legendary"], ["Deck of many things", "Legendary"], ["Defender", "Legendary"], ["Efreeti chain", "Legendary"], ["Hammer of thunderbolts", "Legendary"], ["Holy avenger", "Legendary"], ["Horn of valhalla (iron)", "Legendary"], ["Instrument of the bard (Ollamh harp)", "Legendary"], ["Ioun stone (greater absorption)", "Legendary"], ["Ioun stone (mastery)", "Legendary"], ["Ioun stone (regeneration)", "Legendary"], ["Iron flask", "Legendary"], ["Luck blade", "Legendary"], ["Plate armor of etherealness", "Legendary"], ["Potion of giant strength (storm giant)", "Legendary"], ["Ring of djinni summoning", "Legendary"], ["Ring of elemental command", "Legendary"], ["Ring of invisibility", "Legendary"], ["Ring of spell turning", "Legendary"], ["Ring of three wishes", "Legendary"], ["Robe of the archmagi", "Legendary"], ["Rod of lordly might", "Legendary"], ["Rod of resurrection", "Legendary"], ["Scarab of protection", "Legendary"], ["Sovereign glue", "Legendary"], ["Spell scroll (9th level)", "Legendary"], ["Sphere of annihilation", "Legendary"], ["Staff of the magi", "Legendary"], ["Sword of answering", "Legendary"], ["Talisman of pure good", "Legendary"], ["Talisman of the sphere", "Legendary"], ["Talisman of ultimate evil", "Legendary"], ["Tome of the stilled tongue", "Legendary"], ["Universal solvent", "Legendary"], ["Vorpal sword", "Legendary"], ["Well of many worlds", "Legendary"]
                      
 ];
-var aItemNameList = [["Padded", "Light", 6, "11+Dexmodifier", "Standard"], ["Leather", "Light", 10, "11+Dexmodifier", "Leather"], ["Studdedleather", "Light", 45, "12+Dexmodifier", "Leather"], ["Hide", "Medium", 10, "12+Dexmodifier(max 2)", "Leather"], ["Chainshirt", "Medium", 50, "13+Dexmodifier(max 2)", "Metal"], ["Scalemail", "Medium", 50, "14+Dexmodifier(max 2)", "Metal"], ["Breastplate", "Medium", 400, "14+Dexmodifier(max 2)", "Metal"], ["Halfplate", "Medium", 750, "15+Dexmodifier(max 2)", "Metal"], ["Ringmail", "Heavy", 30, "14AC", "Metal"], ["Chainmail", "Heavy", 70, "16AC", "Metal"], ["Splint", "Heavy", 200, "17AC", "Metal"], ["Plate", "Heavy", 1500, "gp", "18AC", "Metal"], ["Shield", "Shield", 10, "+2AC", "Metal"], ["Hide Shield", "Shield", 10, "+1AC", "Metal"]];
+var aItemNameList = [["Padded", "Light", 6, "11 + Dex modifier", "Standard"], ["Leather", "Light", 10, "11 + Dex modifier", "Leather"], ["Studded leather", "Light", 45, "12 + Dexmodifier", "Leather"], ["Hide", "Medium", 10, "12 + Dex modifier (max 2)", "Leather"], ["Chainshirt", "Medium", 50, "13 + Dex modifier (max 2)", "Metal"], ["Scalemail", "Medium", 50, "14 + Dex modifier (max 2)", "Metal"], ["Breastplate", "Medium", 400, "14 + Dex modifier (max 2)", "Metal"], ["Halfplate", "Medium", 750, "15 + Dex modifier (max 2)", "Metal"], ["Ringmail", "Heavy", 30, "14 AC", "Metal"], ["Chainmail", "Heavy", 70, "16 AC", "Metal"], ["Splint", "Heavy", 200, "17 AC", "Metal"], ["Plate", "Heavy", 1500, "gp", "18 AC", "Metal"], ["Shield", "Shield", 10, "+2 AC", "Metal"], ["Hide Shield", "Shield", 10, "+1 AC", "Metal"]];
     
 var asItemTypeList = [["Standard", "No additional benefit", 1], ["Tough", "Resistant to bludgeoning", 1.5]];
 
@@ -38,8 +38,11 @@ var amItemTypeList = [["Standard", "No additional benefit", 1], ["Adamantite", "
 var alItemTypeList = [["Standard", "No additional benefit", 1], ["Red Dragon", "Resistant to fire damage", 5], ["Blue Dragon", "Resistant to cold damage", 5]];
 
 
-var wItemNameList = [["Weapon worth 10gp", 10], ["Weapon worth 20gp", 20], ["Weapon worth 30gp", 30], ["Weapon worth 10gp", 30], ["Weapon worth 40gp", 40], ["Weapon worth 50gp", 50], ["Weapon worth 60gp", 60], ["Weapon worth 70gp", 70], ["Weapon worth 70gp", 70], ["Weapon worth 80gp", 80], ["Weapon worth 90gp", 90], ["Weapon worth 100gp", 100], ["Weapon worth 110gp", 110], ["Weapon worth 120gp", 120], ["Weapon worth 130gp", 130], ["Weapon worth 140gp", 140], ["Weapon worth 150gp", 150], ["Weapon worth 160gp", 160], ["Weapon worth 160gp", 160], ["Weapon worth 170gp", 170], ["Weapon worth 180gp", 180], ["Weapon worth 190gp", 190], ["Weapon worth 200gp", 200], ["Weapon worth 210gp", 210], ["Weapon worth 250gp", 250], ["Weapon worth 220gp", 220], ["Weapon worth 230gp", 230], ["Weapon worth 240gp", 240], ];
-var wItemTypeList = [["Silvered", "Silvered blade", 1.5], ["Standard", "No additional benefit", 1], ["Masterful", "+1 to attack and damage", 5], ["Magnificent", "+2 to attack and damage", 20], ["Mythic", "+3 to attack and damage", 20], ["Adamantine", "Negates non-magic resistances", 3], ["Flame Tounge", "+2d6 fire damage", 10], ];
+var wItemNameList = [
+    
+["Club", 0.1 , "1d4 bludgeoning", "2 lb.", "Light"], ["Dagger", 2 , "1d4 piercing", "1 lb.", "Finesse, light, thrown (range 20/60)"], ["Greatclub", 0.2 , "1d8 bludgeoning", "10 lb.", "Two-handed"], ["Handaxe", 5 , "1d6 slashing", "2 lb.", "Light, thrown (range 20/60)"], ["Javelin", 0.5 , "1d6 piercing", "2 lb.", "Thrown (range 30/120)"], ["Light hammer", 2 , "1d4 bludgeoning", "2 lb.", "Light, thrown (range 20/60)"], ["Mace", 5 , "1d6 bludgeoning", "4 lb.", "-"], ["Quarterstaff", 0.2 , "1d6 bludgeoning", "4 lb.", "Versatile (1d8)"], ["Sickle", 1 , "1d4 slashing", "2 lb.", "Light"], ["Spear", 1 , "1d6 piercing", "3 lb.", "Thrown (range 20/60), versatile (1d8)"], ["Crossbow, light", 25 , "1d8 piercing", "5 lb.", "Ammunition (range 80/320), loading, two-handed"], ["Dart", 0.05, "1d4 piercing", "1/4 lb.", "Finesse, thrown (range 20/60)"], ["Shortbow", 25 , "1d6 piercing", "2 lb.", "Ammunition (range 80/320), two-handed"], ["Sling", 0.1 , "1d4 bludgeoning", "-", "Ammunition (range 30/120)"], ["Battleaxe", 10 , "1d8 slashing", "4 lb.", "Versatile (1d10)"], ["Flail", 10 , "1d8 bludgeoning", "2 lb.", "-"], ["Glaive", 20 , "1d10 slashing", "6 lb.", "Heavy, reach, two-handed"], ["Greataxe", 30 , "1d12 slashing", "7 lb.", "Heavy, two-handed"], ["Greatsword", 50 , "2d6 slashing", "6 lb.", "Heavy, two-handed"], ["Halberd", 20 , "1d10 slashing", "6 lb.", "Heavy, reach, two-handed"], ["Lance", 10 , "1d12 piercing", "6 lb.", "Reach, special"], ["Longsword", 15 , "1d8 slashing", "3 lb.", "Versatile (1d10)"], ["Maul", 10 , "2d6 bludgeoning", "10 lb.", "Heavy, two-handed"], ["Morningstar", 15 , "1d8 piercing", "4 lb.", "-"], ["Pike", 5 , "1d10 piercing", "18 lb.", "Heavy, reach, two-handed"], ["Rapier", 25 , "1d8 piercing", "2 lb.", "Finesse"], ["Scimitar", 25 , "1d6 slashing", "3 lb.", "Finesse, light"], ["Shortsword", 10 , "1d6 piercing", "2 lb.", "Finesse, light"], ["Trident", 5 , "1d6 piercing", "4 lb.", "Thrown (range 20/60), versatile (1d8)"], ["War pick", 5 , "1d8 piercing", "2 lb.", "-"], ["Warhammer", 15 , "1d8 bludgeoning", "2 lb.", "Versatile (1d10"], ["Whip", 2 , "1d4 slashing", "3 lb.", "Finesse, reach"], ["Blowgun", 10 , "1 piercing", "1 lb.", "Ammunition (range 25/100), loading"], ["Crossbow, hand", 75 , "1d6 piercing", "3 lb.", "Ammunition (range 30/120), light, loading"], ["Crossbow, heavy", 50 , "1d10 piercing", "18 lb.", "Ammunition (range 100/400), heavy, loading, two-handed"], ["Longbow", 50 , "1d8 piercing", "2 lb.", "Ammunition (range 150/600), heavy, two-handed"], ["Net", 1 , "-", "3 lb.", "Special, thrown (range 5/15)"]];
+    
+var wItemTypeList = [["Silvered", "Silvered blade/ammunotion", 1.5], ["Standard", "No additional benefit", 1], ["Masterful", "+1 to attack and damage", 5], ["Magnificent", "+2 to attack and damage", 20], ["Mythic", "+3 to attack and damage", 20], ["Adamantine", "Negates non-magic resistances", 3], ["Flame Tounge", "+2d6 fire damage", 10], ];
 
 function randomise() {
     $('#result').empty();
@@ -81,7 +84,16 @@ function generateShop() {
             shop = randValue(aShopNameList);
             break
         case 2:
-            shop = randValue(wShopNameList);
+            var fname;
+            var name = "(City Name) ";
+            if (Math.random() > 0.3){
+                fname = $('#pname').text().split(" ");
+                name = randValue(fname) + "'s ";
+                console.log(name);
+            } else if (Math.random() > 0.5) {
+                name = "The ";
+            }
+            shop = name + randValue(wShopNameList);
             break;
         case 3:
             shop = randValue(tShopNameList);
@@ -168,7 +180,7 @@ function generateItems() {
                         break;
                     }
                 var calcCost = parseFloat(((itemCost*0.8) + (Math.random()*itemCost*0.4)).toPrecision(2));
-                html += "<tr><td>" + newItem[0] + "</td><td>" + newItem[1] + "</td><td>" + calcCost + "GP</td></tr>";
+                html += "<tr><td>" + newItem[0] + "</td><td>" + newItem[1] + "</td><td>" + calcCost + " GP</td></tr>";
             }
             html += '</tbody></table>';
             break;
@@ -189,16 +201,36 @@ function generateItems() {
                         break;
                     }
                 var newType = randValue(armourType);
-                html += "<tr><td>" + newType[0] + " " + newItem[0] + "</td><td>" + newType[1] + "</td><td>" + newItem[3] + "</td><td>" + newItem[2]*newType[2] + "GP</td></tr>";
+                html += "<tr><td>" + newType[0] + " " + newItem[0] + "</td><td>" + newType[1] + "</td><td>" + newItem[3] + "</td><td>" + newItem[2]*newType[2] + " GP</td></tr>";
             }
             html += '</tbody></table>';
             break;
         case 2:
-            var html = '<table class="table"><thead><tr><th scope="col">Weapon</th><th scope="col">Attributes</th><th scope="col">Cost</th></thead><tbody><tr>';
+            var html = '<table class="table"><thead><tr><th scope="col">Weapon</th><th scope="col">Attributes</th><th scope="col">Properties</th><th scope="col">Damage</th><th scope="col">Weight</th><th scope="col">Cost</th></thead><tbody><tr>';
             for (var i = 0; i <= count; i++) {
                 var newItem = randValue(wItemNameList);
                 var newType = randValue(wItemTypeList);
-                html += "<tr><td>" + newType[0] + " " + newItem[0] + "</td><td>" + newType[1] + "</td><td>" + newItem[1]*newType[2] + "GP</td></tr>";
+                if(newType[0]!="Standard" || newType[0]=="Mythic" || newType[0]=="Magnificent"){
+                    newType = randValue(wItemTypeList);
+                    if(newType[0]=="Mythic" || newType[0]=="Magnificent"){
+                        newType = randValue(wItemTypeList);
+                    }
+                }
+                var cost = newItem[1]*newType[2];
+                var itemVal;
+                console.log(cost);
+                if(cost < 1){
+                    cost = cost*10;
+                    if(cost < 1){
+                        cost = cost*10;
+                        itemVal = Math.ceil(cost) + " CP"
+                    } else {
+                        itemVal = Math.ceil(cost) + " SP"
+                    }                   
+                } else {
+                    itemVal = Math.ceil(cost) + " GP"
+                }
+                html += "<tr><td>" + newType[0] + " " + newItem[0] + "</td><td>" + newType[1] + "</td><td>" + newItem[4] + "</td><td>" + newItem[2] + "</td><td>" + newItem[3] + "</td><td>" + itemVal + "</td></tr>";
             }
             html += '</tbody></table>';
             break;
