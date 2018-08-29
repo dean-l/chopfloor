@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Peregrinnderverrinevin Zharpe</title>
+
+    <link rel="import" href="statblock/src/top-stats.html">
+    <link rel="import" href="statblock/src/creature-heading.html">
+    <link rel="import" href="statblock/src/abilities-block.html">
+    <link rel="import" href="statblock/src/property-block.html">
+    <link rel="import" href="statblock/src/property-line.html">
+    <link rel="import" href="statblock/src/stat-block.html">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #202020;
+        }
+
+        stat-block {
+            /* A bit of margin for presentation purposes, to show off the drop
+        shadow. */
+            margin-top: 20px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        img {
+            padding: 20px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <stat-block data-two-column>
+        <creature-heading>
+            <h1>Peregrinnderverrinevin Zharpe</h1>
+            <h2>Medium humanoid (Gnome); Chaotic Evil</h2>
+        </creature-heading>
+
+        <img src="AornirDennouir.png" />
+
+        <top-stats>
+            <property-line>
+                <h4>Armor Class</h4>
+                <p>12 (15 with mage armor)</p>
+            </property-line>
+            <property-line>
+                <h4>Hit Points</h4>
+                <p>40 (9d8)</p>
+            </property-line>
+            <property-line>
+                <h4>Speed</h4>
+                <p>30 ft.</p>
+            </property-line>
+
+            <abilities-block data-str="9" data-dex="14" data-con="11" data-int="17" data-wis="12" data-cha="11"></abilities-block>
+            <property-line>
+                <h4>Saving Throws</h4>
+                <p>Int +6, Wis +4</p>
+            </property-line>
+            <property-line>
+                <h4>Skills</h4>
+                <p>Arcana +6, History +6</p>
+            </property-line>
+            <property-line>
+                <h4>Senses</h4>
+                <p>passive Perception 11</p>
+            </property-line>
+            <property-line>
+                <h4>Languages</h4>
+                <p>Common, Elvish, Gnomish, Dwarven</p>
+            </property-line>
+            <property-line>
+                <h4>Challenge</h4>
+                <p>5 (1,800 XP)</p>
+            </property-line>
+        </top-stats>
+
+
+        <property-block>
+            <h4>Spellcasting.</h4>
+            <p>The enchanter is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The enchanter has the following wizard spells prepared:</P>
+            <p>Cantrips (at will): friends, mage hand, mending, message</p>
+            <p>
+                1st level (4 slots): charm person,* mage armor, magic missile
+            </p>
+            <p>
+                2nd level (3 slots): hold person,* invisibility, suggestion*
+            </p>
+            <p>
+                3rd level (3 slots): fireball, haste, tongues
+            </p>
+            <p>
+                4th level (3 slots): dominate beast,* stoneskin
+            </p>
+            <p>
+                5th level (2 slots): hold monster*</p>
+            <p>
+                *Enchantment spell of 1st level or higher</p>
+            </p>
+        </property-block>
+
+        <h3>Actions</h3>
+
+        <property-block>
+            <h4>Quarterstaff</h4>
+            <p><i>Melee Weapon Attack:</i> +2 to hit, reach 5 ft., one target.
+                <i>Hit:</i> 2 (1d6 - 1) bludgeoning damage, or 3 (1d8 - 1) bludgeoning damage if used with two hands.</p>
+        </property-block>
+
+        <h3>Reactions</h3>
+
+        <property-block>
+            <h4>Instinctive Charm (Recharges after the Enchanter Casts an Enchantment Spell of 1st Level or Higher).</h4>
+            <p>The enchanter tries to magically divert an attack made against it, provided that the attacker is with in 30 feet of it and visible to it. The enchanter must decide to do so before the attack hits or misses. The attacker must make a DC 14 Wisdom saving throw. On a failed save, the attacker targets the creature closest to it, other than the enchanter or itself. If multiple creatures are closest, the attacker chooses which one to target.</p>
+        </property-block>
+    </stat-block>
+</body>
+
+</html>
