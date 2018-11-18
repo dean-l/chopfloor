@@ -1,3 +1,6 @@
+/*eslint-env jquery*/
+/*eslint-env browser*/
+
 $(document).ready(function(){
     $(".desc").hide();
     $(".skill").click(function(){
