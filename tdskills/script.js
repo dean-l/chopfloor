@@ -10,10 +10,18 @@ $(document).ready(function(){
             $(this).children(".desc").css("display", "none");
         }
     });
+    $(".heritage-skill").click(function(){
+        if($(this).children(".desc").css("display") == "none"){
+            $(this).children(".desc").css("display", "block");
+        } else {
+            $(this).children(".desc").css("display", "none");
+        }
+    });
     $(".addBtn").click(function(){
         var mySkill = $(this).parent().parent().html();
         var newSkill = mySkill.replace('addBtn">Add to my List', 'removeBtn">Remove from my List');
-        $(".myList").after('<div class="skill">' + newSkill + '</div>');
+        var skillType = $(this).parent().parent().attr("class");
+        $(".myList").after('<div class="' + skillType + '">' + newSkill + '</div>');
     });
     $(".openBtn").click(function(){
         $(".skillList").find(".desc").css("display", "block");

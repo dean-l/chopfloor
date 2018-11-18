@@ -2,7 +2,7 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <style>
         body {
             background-color: #909090;
@@ -16,12 +16,17 @@
             margin-right: 10%;
             background-color: #ffffff;
         }
-        
+
         .myList {
-            padding: 20px;
+            padding: 10px;
             margin: 5px;
         }
-        
+
+        .skillList {
+            padding: 10px;
+            margin: 5px;
+        }
+
         .line {
             padding: 0px;
             margin: 5px;
@@ -35,13 +40,23 @@
             background-color: #aaccdd;
         }
 
+        .heritage-skill {
+            padding: 20px;
+            margin: 5px;
+            background-color: #aaddaa;
+        }
+
         .desc {
             padding: 10px;
             margin: 0px;
             background-color: #fff;
             display: block;
         }
-        .addBtn, .removeBtn, .openBtn, .hideBtn {
+
+        .addBtn,
+        .removeBtn,
+        .openBtn,
+        .hideBtn {
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -52,6 +67,7 @@
             background-color: #444444;
             color: #ffffff
         }
+
         h1,
         h2,
         h3 {
@@ -67,357 +83,418 @@
         p {
             margin: 10px;
         }
+
         em {
             color: #808080;
         }
-        
-        @media screen and (max-width: 767px){
-            
+
+        @media screen and (max-width: 767px) {
+
             .content {
                 padding: 20px;
                 margin-left: 0%;
                 margin-right: 0%;
                 background-color: #ffffff;
             }
-            
+
         }
     </style>
     <script src="script.js"></script>
     <title>Tiny Dungeon Skills</title>
 </head>
+
 <body>
     <div class="content">
         <div class="myList">
-           <h1>Tiny Dungeon Skills</h1>
-            <h2>My List</h2>
+            <h1>Tiny Dungeon</h1>
+
+            <h2>My Skills</h2>
         </div>
         <div class="line"></div>
-        <button class="openBtn">Open All</button>
-        <button class="hideBtn">Hide All</button>
         <div class="skillList">
-        <div class="skill">
-            <p><strong>Acrobat</strong></p>
-            <div class="desc">
-                <p> <em>It’s up there? No problem!</em></p>
-                <p>You gain Advantage when Testing to do acrobatic tricks such as tumbling, long-distance jumps, climbing, and maintaining balance</p>
-                <button class="addBtn">Add to my List</button>
+            <h2>All Skills</h2>
+            <button class="openBtn">Open All</button>
+            <button class="hideBtn">Hide All</button>
+            <div class="skill">
+                <p><strong>Acrobat</strong></p>
+                <div class="desc" id="desc1">
+                    <p> <em>It’s up there? No problem!</em></p>
+                    <p>You gain Advantage when Testing to do acrobatic tricks such as tumbling, long-distance jumps, climbing, and maintaining balance</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Alchemist</strong></p>
-            <div class="desc">
-                <p> <em>Dragon’s blood has many uses. It’s also great on salads</em></p>
-                <p>Provided the right reagents and recipes, you can mix potions, elixirs, and poisons. You also gain Advantage when identifying unknown liquids</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Alchemist</strong></p>
+                <div class="desc" id="desc2">
+                    <p> <em>Dragon’s blood has many uses. It’s also great on salads</em></p>
+                    <p>Provided the right reagents and recipes, you can mix potions, elixirs, and poisons. You also gain Advantage when identifying unknown liquids</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Armor Master</strong></p>
-            <div class="desc">
-                <p><em>Your paltry weapons cannot pierce my iron hide!</em></p>
-                <p>You have mastered wearing armor like a second skin. When wearing any form of armor, you have an extra 3 Hit Points that must be lost before you take physical damage. These hit points cannot be healed and must be restored via repairing your armor. It takes a full 8 hours to repair all 3 Hit Points</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Armor Master</strong></p>
+                <div class="desc" id="desc3">
+                    <p><em>Your paltry weapons cannot pierce my iron hide!</em></p>
+                    <p>You have mastered wearing armor like a second skin. When wearing any form of armor, you have an extra 3 Hit Points that must be lost before you take physical damage. These hit points cannot be healed and must be restored via repairing your armor. It takes a full 8 hours to repair all 3 Hit Points</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Barfighter</strong></p>
-            <div class="desc">
-                <p><em>Funny how you always fancy yourself a drink, right on Unification day</em></p>
-                <p> You can select Improvised Weapons as a Weapon Group. You do not get to pick a Weapon to Master. Instead, when fighting with any Improvised Weapons, you get one extra action each turn</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Barfighter</strong></p>
+                <div class="desc" id="desc4">
+                    <p><em>Funny how you always fancy yourself a drink, right on Unification day</em></p>
+                    <p> You can select Improvised Weapons as a Weapon Group. You do not get to pick a Weapon to Master. Instead, when fighting with any Improvised Weapons, you get one extra action each turn</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Beastspeaker</strong></p>
-            <div class="desc">
-                <p><em>What is it, boy?! The king fell down a well?!</em></p>
-                <p>You are able to communicate with animals. This form of communication is primitive and very simplistic</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Beastspeaker</strong></p>
+                <div class="desc" id="desc5">
+                    <p><em>What is it, boy?! The king fell down a well?!</em></p>
+                    <p>You are able to communicate with animals. This form of communication is primitive and very simplistic</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Beserker</strong></p>
-            <div class="desc">
-                <p> <em>RAAAAAGH!</em></p>
-                <p>You can attack with primal and furious rage. You can choose to make an attack with Disadvantage. If you do and succeed, you deal 2 damage instead of 1</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Beserker</strong></p>
+                <div class="desc" id="desc6">
+                    <p> <em>RAAAAAGH!</em></p>
+                    <p>You can attack with primal and furious rage. You can choose to make an attack with Disadvantage. If you do and succeed, you deal 2 damage instead of 1</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Blacksmith</strong></p>
-            <div class="desc">
-                <p><em>I can fix that!</em> </p>
-                <p>Once per day, you can make a Test with Advantage. If successful, you can restore 1 Depletion point to any object (See Item Expenditure and Depletion Points; pg. 37)</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Blacksmith</strong></p>
+                <div class="desc" id="desc7">
+                    <p><em>I can fix that!</em> </p>
+                    <p>Once per day, you can make a Test with Advantage. If successful, you can restore 1 Depletion point to any object (See Item Expenditure and Depletion Points; pg. 37)</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Brawler</strong></p>
-            <div class="desc">
-                <p><em> Everybody has a plan until they get punched in the face</em></p>
-                <p>While Fighting Unarmed, your Evade action Tests with 2d6 (instead of 1d6)</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Brawler</strong></p>
+                <div class="desc" id="desc8">
+                    <p><em> Everybody has a plan until they get punched in the face</em></p>
+                    <p>While Fighting Unarmed, your Evade action Tests with 2d6 (instead of 1d6)</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Charismatic</strong>
-            </p>
-            <div class="desc">
-                <p> <em>I can get what I want without even asking</em></p>
-                <p> You gain Advantage when attempting to convince someone of something or otherwise influence them</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Charismatic</strong></p>
+                <div class="desc" id="desc9">
+                    <p> <em>I can get what I want without even asking</em></p>
+                    <p> You gain Advantage when attempting to convince someone of something or otherwise influence them</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Cleave</strong></p>
-            <div class="desc">
-                <p><em> I will bathe in the blood of enemies!</em></p>
-                <p> If your attack drops an enemy to 0 Hit Points, you may immediately make an extra attack with Disadvantage</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Cleave</strong></p>
+                <div class="desc" id="desc10">
+                    <p><em> I will bathe in the blood of enemies!</em></p>
+                    <p> If your attack drops an enemy to 0 Hit Points, you may immediately make an extra attack with Disadvantage</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Dark-fighter</strong></p>
-            <div class="desc">
-                <p> <em>Who needs eyes, when I have all the other senses?</em></p>
-                <p> You do not suffer Disadvantage for having your sight impaired</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Dark-fighter</strong></p>
+                <div class="desc" id="desc11">
+                    <p> <em>Who needs eyes, when I have all the other senses?</em></p>
+                    <p> You do not suffer Disadvantage for having your sight impaired</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Defender</strong></p>
-            <div class="desc">
-                <p> <em>I’ve got your back</em></p>
-                <p> When an adjacent ally is hit, before Evade Tests are made, you may choose to have that attack hit you instead</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Defender</strong></p>
+                <div class="desc" id="desc12">
+                    <p> <em>I’ve got your back</em></p>
+                    <p> When an adjacent ally is hit, before Evade Tests are made, you may choose to have that attack hit you instead</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Diehard</strong></p>
-            <div class="desc">
-                <p> <em>I’m not going down that easy</em></p>
-                <p> When an attack would reduce you to 0 Hit Points, it instead reduces you to 2 Hit Points. You can do this once per day</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Diehard</strong></p>
+                <div class="desc" id="desc13">
+                    <p> <em>I’m not going down that easy</em></p>
+                    <p> When an attack would reduce you to 0 Hit Points, it instead reduces you to 2 Hit Points. You can do this once per day</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Drunken Master</strong></p>
-            <div class="desc">
-                <p><em> *Urrp*</em></p>
-                <p> While you are intoxicated, you may Evade without spending an action. However, you have Disadvantage on all rolls that require careful and delicate manipulation, social grace, or might be severely impacted by your intoxication (Game Master discretion)</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Drunken Master</strong></p>
+                <div class="desc" id="desc14">
+                    <p><em> *Urrp*</em></p>
+                    <p> While you are intoxicated, you may Evade without spending an action. However, you have Disadvantage on all rolls that require careful and delicate manipulation, social grace, or might be severely impacted by your intoxication (Game Master discretion)</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Dungeoneer</strong></p>
-            <div class="desc">
-                <p> <em>We go left</em></p>
-                <p> I’ve seen a lot of dungeons in my time, and I can tell by the way the moss covers this wall. You gain Advantage when attempting to find your way through a dungeon or cave system and when attempting to identify creatures native to dungeons or caves</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Dungeoneer</strong></p>
+                <div class="desc" id="desc15">
+                    <p> <em>We go left</em></p>
+                    <p> I’ve seen a lot of dungeons in my time, and I can tell by the way the moss covers this wall. You gain Advantage when attempting to find your way through a dungeon or cave system and when attempting to identify creatures native to dungeons or caves</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Educated</strong></p>
-            <div class="desc">
-                <p> <em>I didn’t go to academy for four years for nothing</em></p>
-                <p> You gain Advantage when checking to see if you know specific information</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Educated</strong></p>
+                <div class="desc" id="desc16">
+                    <p> <em>I didn’t go to academy for four years for nothing</em></p>
+                    <p> You gain Advantage when checking to see if you know specific information</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Eidetic Memory</strong></p>
-            <div class="desc">
-                <p> <em>You remember that guy in that city? Who did that thing? I remember exactly what he said</em></p>
-                <p> When Testing to recall information, you have seen or heard previously—even in passing—you succeed on a roll of 4, 5, or 6</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Eidetic Memory</strong></p>
+                <div class="desc" id="desc17">
+                    <p> <em>You remember that guy in that city? Who did that thing? I remember exactly what he said</em></p>
+                    <p> When Testing to recall information, you have seen or heard previously—even in passing—you succeed on a roll of 4, 5, or 6</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Familiar</strong></p>
-            <div class="desc">
-                <p> <em>Your faceless shadow cat is really freaking me out, man</em></p>
-                <p>For as long as you can remember, you have never truly been alone. Another spirit has linked itself to yours, accepting you as its friend and master. (See Magic; pg. 15) </p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Familiar</strong></p>
+                <div class="desc" id="desc18">
+                    <p> <em>Your faceless shadow cat is really freaking me out, man</em></p>
+                    <p>For as long as you can remember, you have never truly been alone. Another spirit has linked itself to yours, accepting you as its friend and master. (See Magic; pg. 15) </p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Fleet of Foot</strong></p>
-            <div class="desc">
-                <p> <em>Running away is always a valid option</em></p>
-                <p> Your speed increases from 25 feet to 30 feet. You gain Advantage on Tests when chasing or running</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Fleet of Foot</strong></p>
+                <div class="desc" id="desc19">
+                    <p> <em>Running away is always a valid option</em></p>
+                    <p> Your speed increases from 25 feet to 30 feet. You gain Advantage on Tests when chasing or running</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Healer</strong></p>
-            <div class="desc">
-                <p> <em>I’ve seen worse, son. You’ll pull through</em></p>
-                <p> As an Action, you can Test 2d6 to heal a creature other than yourself. If the Test is successful, the target creature is healed for 2 Hit Points. This Trait can also be used to cure poison, disease, and other physical ailments that are non-magical. You must be next to the creature to heal it. (See Magic; pg 15)</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Healer</strong></p>
+                <div class="desc" id="desc20">
+                    <p> <em>I’ve seen worse, son. You’ll pull through</em></p>
+                    <p> As an Action, you can Test 2d6 to heal a creature other than yourself. If the Test is successful, the target creature is healed for 2 Hit Points. This Trait can also be used to cure poison, disease, and other physical ailments that are non-magical. You must be next to the creature to heal it. (See Magic; pg 15)</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Insightful</strong>
-            </p>
-            <div class="desc">
-                <p> <em>Stop pulling my leg… </em></p>
-                <p>You gain Advantage when Testing to discern whether or not someone is telling the truth or lying</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Insightful</strong></p>
+                <div class="desc" id="desc21">
+                    <p> <em>Stop pulling my leg… </em></p>
+                    <p>You gain Advantage when Testing to discern whether or not someone is telling the truth or lying</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Lucky</strong></p>
-            <div class="desc">
-                <p> <em>Whew! That was close</em></p>
-                <p> You may reroll one Test per session</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Lucky</strong></p>
+                <div class="desc" id="desc22">
+                    <p> <em>Whew! That was close</em></p>
+                    <p> You may reroll one Test per session</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Marksman</strong></p>
-            <div class="desc">
-                <p> <em>The odds of hitting your target increase dramatically when you aim at it</em></p>
-                <p> When using the Focus Action, your next attack with a ranged weapon is successful on a Test of 3, 4, 5, or 6</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Marksman</strong></p>
+                <div class="desc" id="desc23">
+                    <p> <em>The odds of hitting your target increase dramatically when you aim at it</em></p>
+                    <p> When using the Focus Action, your next attack with a ranged weapon is successful on a Test of 3, 4, 5, or 6</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Martial Artist</strong></p>
-            <div class="desc">
-                <p> <em>Be like water, flowing through cracks</em></p>
-                <p> You can select Unarmed as a Weapon Group to be proficient with. You must select a particular martial arts attack as your Mastered Weapon</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Martial Artist</strong></p>
+                <div class="desc" id="desc24">
+                    <p> <em>Be like water, flowing through cracks</em></p>
+                    <p> You can select Unarmed as a Weapon Group to be proficient with. You must select a particular martial arts attack as your Mastered Weapon</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Nimble Fingers</strong></p>
-            <div class="desc">
-                <p> <em>I could have sworn I left it right here!</em> </p>
-                <p>You gain Advantage when Testing to pick locks, steal, or do slight-of-hand</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Nimble Fingers</strong></p>
+                <div class="desc" id="desc25">
+                    <p> <em>I could have sworn I left it right here!</em> </p>
+                    <p>You gain Advantage when Testing to pick locks, steal, or do slight-of-hand</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Opportunist</strong></p>
-            <div class="desc">
-                <p> <em>One man’s failure is another man’s opening to stab the idiot who failed</em></p>
-                <p> If an enemy within range fails to hit with an attack against you, you may immediately make an attack with Disadvantage against that enemy</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Opportunist</strong></p>
+                <div class="desc" id="desc26">
+                    <p> <em>One man’s failure is another man’s opening to stab the idiot who failed</em></p>
+                    <p> If an enemy within range fails to hit with an attack against you, you may immediately make an attack with Disadvantage against that enemy</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Perceptive</strong></p>
-            <div class="desc">
-                <p> <em>What has been seen cannot be unseen</em></p>
-                <p> You gain Advantage when Testing to gain information about your surroundings or find things that may be hidden. You gain this even while asleep</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Perceptive</strong></p>
+                <div class="desc" id="desc27">
+                    <p> <em>What has been seen cannot be unseen</em></p>
+                    <p> You gain Advantage when Testing to gain information about your surroundings or find things that may be hidden. You gain this even while asleep</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Quartermaster</strong></p>
-            <div class="desc">
-                <p> <em>I’m always prepared</em></p>
-                <p> When you roll for Depletion, you can choose to reroll once per day. You must keep the second result. (See Item Expenditure and Depletion Points; pg 37)</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Quartermaster</strong></p>
+                <div class="desc" id="desc28">
+                    <p> <em>I’m always prepared</em></p>
+                    <p> When you roll for Depletion, you can choose to reroll once per day. You must keep the second result. (See Item Expenditure and Depletion Points; pg 37)</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Quick Shot</strong></p>
-            <div class="desc">
-                <p> P<em>ew, pew, pew!</em></p>
-                <p> You are able to reload a Ranged Weapon and fire it in one Action</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Quick Shot</strong></p>
+                <div class="desc" id="desc29">
+                    <p> P<em>ew, pew, pew!</em></p>
+                    <p> You are able to reload a Ranged Weapon and fire it in one Action</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Resolute</strong></p>
-            <div class="desc">
-                <p> <em>I will not be a casualty of fear</em></p>
-                <p> You gain Advantage on all Save Tests</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Resolute</strong></p>
+                <div class="desc" id="desc30">
+                    <p> <em>I will not be a casualty of fear</em></p>
+                    <p> You gain Advantage on all Save Tests</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Shield Bearer</strong></p>
-            <div class="desc">
-                <p> <em>I’ve got you covered</em></p>
-                <p> While wielding a shield, Test with 2d6 on Evade or Goblin Agility Actions instead of 1d6. If you choose this Trait, your Adventurer gains a shield at Adventurer creation</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Shield Bearer</strong></p>
+                <div class="desc" id="desc31">
+                    <p> <em>I’ve got you covered</em></p>
+                    <p> While wielding a shield, Test with 2d6 on Evade or Goblin Agility Actions instead of 1d6. If you choose this Trait, your Adventurer gains a shield at Adventurer creation</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Sneaky</strong></p>
-            <div class="desc">
-                <p> <em>Hey, did you hear something?</em></p>
-                <p> You gain Advantage when Testing to hide or sneak around without others noticing you</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Sneaky</strong></p>
+                <div class="desc" id="desc32">
+                    <p> <em>Hey, did you hear something?</em></p>
+                    <p> You gain Advantage when Testing to hide or sneak around without others noticing you</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Spell Reader</strong></p>
-            <div class="desc">
-                <p> <em>P as in phylactery</em></p>
-                <p> You have spent years learning the sacred language of the arcane, allowing you to read powerlaced words from magic scrolls. (See Magic; pg 15)</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Spell Reader</strong></p>
+                <div class="desc" id="desc33">
+                    <p> <em>P as in phylactery</em></p>
+                    <p> You have spent years learning the sacred language of the arcane, allowing you to read powerlaced words from magic scrolls. (See Magic; pg 15)</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Spell-Touched</strong>
-            </p>
-            <div class="desc">
-                <p> <em>It runs in the family</em></p>
-                <p> Your family carries magic in the blood, and while the centuries have diluted the power, you are still able to subtly influence the world around you by merely willing it to happen (See Magic; pg 15)</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Spell-Touched</strong></p>
+                <div class="desc" id="desc34">
+                    <p> <em>It runs in the family</em></p>
+                    <p> Your family carries magic in the blood, and while the centuries have diluted the power, you are still able to subtly influence the world around you by merely willing it to happen (See Magic; pg 15)</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p> <strong>Strong</strong>
-            </p>
-            <div class="desc">
-                <p> <em>Stand back, I’ll kick it in!</em> </p>
-                <p>You gain Advantage when Testing to do something with brute force</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p> <strong>Strong</strong></p>
+                <div class="desc" id="desc35">
+                    <p> <em>Stand back, I’ll kick it in!</em> </p>
+                    <p>You gain Advantage when Testing to do something with brute force</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Survivalist</strong></p>
-            <div class="desc">
-                <p> <em>These berries are safe to eat… I think</em></p>
-                <p> You gain Advantage when Testing to forage for food, find water, seek shelter, or create shelter in the wild</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Survivalist</strong></p>
+                <div class="desc" id="desc36">
+                    <p> <em>These berries are safe to eat… I think</em></p>
+                    <p> You gain Advantage when Testing to forage for food, find water, seek shelter, or create shelter in the wild</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Tough</strong></p>
-            <div class="desc">
-                <p> <em>I have not journeyed all this way because I am made of sugar candy</em></p>
-                <p> You gain 2 additional Hit Points</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Tough</strong></p>
+                <div class="desc" id="desc37">
+                    <p> <em>I have not journeyed all this way because I am made of sugar candy</em></p>
+                    <p> You gain 2 additional Hit Points</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Tracker</strong></p>
-            <div class="desc">
-                <p> <em>These prints are fresh. He went that way</em></p>
-                <p> You gain Advantage when Testing to track a person, creature, or animal in the wilderness. While outside, you can also locate true north without Testing</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Tracker</strong></p>
+                <div class="desc" id="desc38">
+                    <p> <em>These prints are fresh. He went that way</em></p>
+                    <p> You gain Advantage when Testing to track a person, creature, or animal in the wilderness. While outside, you can also locate true north without Testing</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Trapmaster</strong></p>
-            <div class="desc">
-                <p> <em>It’s a trap! </em></p>
-                <p>You gain Advantage when Testing to create, locate, and disarm traps. You also gain Advantage on Save Tests against traps</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Trapmaster</strong></p>
+                <div class="desc" id="desc39">
+                    <p> <em>It’s a trap! </em></p>
+                    <p>You gain Advantage when Testing to create, locate, and disarm traps. You also gain Advantage on Save Tests against traps</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
-        <div class="skill">
-            <p><strong>Vigilant</strong></p>
-            <div class="desc">
-                <p> <em>Better to stay ready than to get ready</em></p>
-                <p> You gain Advantage on Initiative Tests</p>
-                <button class="addBtn">Add to my List</button>
+            <div class="skill">
+                <p><strong>Vigilant</strong></p>
+                <div class="desc" id="desc40">
+                    <p> <em>Better to stay ready than to get ready</em></p>
+                    <p> You gain Advantage on Initiative Tests</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
             </div>
-        </div>
+            <h2>Heritage Skills</h2>
+            <div class="heritage-skill">
+                <p><strong>Bow Mastery</strong></p>
+                <div class="desc" id="desc41">
+                    <p>You have Mastered bows and have Advantage when using them. This is in addition to the Mastered weapon chosen at Adventurer Creation.
+                    </p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
+            </div>
+            <div class="heritage-skill">
+                <p><strong>Dark Vision</strong></p>
+                <div class="desc" id="desc42">
+                    <p>You are able to see in total darkness. However, if you are exposed to sudden bursts of light (spells, alchemist’s flash bombs), you suffer Disadvantage on your next turn.</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
+            </div>
+            <div class="heritage-skill">
+                <p><strong>Goblin Agility</strong></p>
+                <div class="desc" id="desc43">
+                    <p>You can Test 1d6 whenever you are successfully hit by an enemy. If your Test is successful, you evade the attack and do not take damage. Declaring Evade as an Action has no additional benefit.</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
+            </div>
+            <div class="heritage-skill">
+                <p><strong>Pyrothermic Healing</strong></p>
+                <div class="desc" id="desc44">
+                    <p>Any damage that would be dealt to you by a source of natural (nonmagical) fire instead heals you for that amount.
+                    </p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
+            </div>
+            <div class="heritage-skill">
+                <p><strong>Cryothermic Healing</strong></p>
+                <div class="desc" id="desc45">
+                    <p>Any damage that would be dealt to you by a source of natural (non-magical) extreme cold instead heals you for that amount.</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
+            </div>
+            <div class="heritage-skill">
+                <p><strong>Ancient Heart</strong></p>
+                <div class="desc" id="desc46">
+                    <p>You cannot be healed by any means other than direct sunlight and sleep. For each Hit Point to be healed, you must be directly in the sun for an hour (moving or stationary) or use the sleeping rules.</p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
+            </div>
+            <div class="heritage-skill">
+                <p><strong>Powerful Claws</strong></p>
+                <div class="desc" id="desc47">
+                    <p>You have Claw as a Mastered Weapon. You cannot use ranged weapons.
+                    </p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
+            </div>
+            <div class="heritage-skill">
+                <p><strong>Cold-Blooded</strong></p>
+                <div class="desc" id="desc48">
+                    <p>Any attempt to persuade, influence, or manipulate a Lizardfolk through appeals to emotion or feelings suffers Disadvantage.
+                    </p>
+                    <button class="addBtn">Add to my List</button>
+                </div>
+            </div>
         </div>
 </body>
