@@ -12,6 +12,12 @@ $(document).ready(function(){
         var newSkill = mySkill.replace('addBtn">Add to my List', 'removeBtn">Remove from my List');
         $(".myList").after('<div class="skill">' + newSkill + '</div>');
     });
+    $(".openBtn").click(function(){
+        $(".skillList").find(".desc").css("display", "block");
+    });
+    $(".hideBtn").click(function(){
+        $(".skillList").find(".desc").css("display", "none");
+    });
 });
 $(document).on("click", ".removeBtn", function(){
     $(this).parent().parent().remove();

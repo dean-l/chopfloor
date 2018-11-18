@@ -9,7 +9,7 @@
             margin: 0px;
         }
 
-        div {
+        .content {
             padding: 20px;
             margin-left: 10%;
             margin-right: 10%;
@@ -40,18 +40,7 @@
             background-color: #fff;
             display: block;
         }
-        .addBtn {
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            margin: 4px 20px;
-            cursor: pointer;
-            border: none;
-            background-color: #444444;
-            color: #ffffff
-        }
-        .removeBtn {
+        .addBtn, .removeBtn, .openBtn, .hideBtn {
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -82,12 +71,15 @@
     <title>Tiny Dungeon Skills</title>
 </head>
 <body>
-    <div>
+    <div class="content">
         <div class="myList">
            <h1>Tiny Dungeon Skills</h1>
             <h2>My List</h2>
         </div>
         <div class="line"></div>
+        <button class="openBtn">Open All</button>
+        <button class="hideBtn">Hide All</button>
+        <div class="skillList">
         <div class="skill">
             <p><strong>Acrobat</strong></p>
             <div class="desc">
@@ -411,5 +403,6 @@
                 <p> You gain Advantage on Initiative Tests</p>
                 <button class="addBtn">Add to my List</button>
             </div>
+        </div>
         </div>
 </body>
