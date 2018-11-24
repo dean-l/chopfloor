@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        body {
+            background-color: #909090;
+            margin: 0px;
+            font-family: sans-serif;
+        }
+
+        .content {
+            padding: 20px;
+            margin-left: 10%;
+            margin-right: 10%;
+            background-color: #ffffff;
+        }
+
+        .myList {
+            padding: 10px;
+            margin: 5px;
+        }
+        
+                .link{
+            padding: 10px;
+            background-color: #444444;
+            color: #ffffff;
+            float: right;
+        }
+
+        .skillList {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .line {
+            padding: 0px;
+            margin: 5px;
+            height: 5px;
+            background-color: #336699;
+        }
+
+        .skill {
+            padding: 20px;
+            margin: 5px;
+            background-color: #aaccdd;
+        }
+
+        .heritage-skill {
+            padding: 20px;
+            margin: 5px;
+            background-color: #aaddaa;
+        }
+
+        .desc {
+            padding: 10px;
+            margin: 0px;
+            background-color: #fff;
+            display: block;
+        }
+
+        .addBtn,
+        .removeBtn,
+        .openBtn,
+        .hideBtn {
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 20px;
+            cursor: pointer;
+            border: none;
+            background-color: #444444;
+            color: #ffffff
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Arial", sans-serif;
+            text-decoration: none;
+            color: #336699;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        p {
+            margin: 10px;
+        }
+
+        em {
+            color: #808080;
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .content {
+                padding: 20px;
+                margin-left: 0%;
+                margin-right: 0%;
+                background-color: #ffffff;
+            }
+
+        }
+    </style>
+    <script src="script.js"></script>
+    <title>Tiny Dungeon Traits</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="myList">
+           <div class="link">
+            <a href="index.html">Traits</a>
+        </div>
+            <h1>Tiny Dungeon</h1>
+
+            <h2>Rules</h2>
+        </div>
+        <div class="skillList">
+            <button class="openBtn">Open All</button>
+            <button class="hideBtn">Hide All</button>
+            <div class="skill">
+                <p><strong>Tests</strong></p>
+                <div class="desc" id="desc1">
+                    <p><strong>Standard Test;</strong></p>
+                    <ul>
+                       <li>Define what you want to do</li>
+                       <li>Roll 2d6</li>
+                       <li>Success on 5/6</li>
+                    </ul>
+                    <p><strong>With a relevant Trait: Advantage</strong></p>
+                    <ul>
+                       <li>Roll 3d6</li>
+                       <li>Success on 5/6</li>
+                    </ul>
+                    <p><strong>For something particularly difficult or hindered: Disadvantage</strong></p>
+                    <ul>
+                       <li>Roll 1d6</li>
+                       <li>Success on 5/6</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill">
+                <p><strong>Combat</strong></p>
+                <div class="desc" id="desc2">
+                    <p><strong>Initiave order: Standard Test for each combatant, high to low</strong></p>
+                    <p><strong>Two actions per turn:</strong></p>
+                    <ul>
+                       <li>Move
+                       <ul><li>Move your character to a adjacent zone</li></ul>
+                       </li>
+                       <li>Attack
+                       <ul><li>Proficient: Standard Test</li><li>Mastered: Advantage Test</li><li>Not Proficient: Disadvantage Test</li></ul>
+                       </li>
+                       <li>Reload<ul><li>All Ranged weapons require one action to reload</li></ul></li>
+                       <li>Focus<ul><li>Next Attack Test has success on 4/5/6</li></ul></li>
+                       <li>Evade<ul><li>Roll 1d6 if hit by an attack</li><li>On success, attack misses</li></ul></li>
+                       <li>Other<ul><li>Ability Test</li><li>Use an item, etc.</li></ul></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

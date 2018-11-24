@@ -21,6 +21,12 @@
             padding: 10px;
             margin: 5px;
         }
+        .link{
+            padding: 10px;
+            background-color: #444444;
+            color: #ffffff;
+            float: right;
+        }
 
         .skillList {
             padding: 10px;
@@ -78,6 +84,7 @@
 
         a {
             text-decoration: none;
+            color: #ffffff;
         }
 
         p {
@@ -100,35 +107,38 @@
         }
     </style>
     <script src="script.js"></script>
-    <title>Tiny Dungeon Skills</title>
+    <title>Tiny Dungeon Traits</title>
 </head>
 
 <body>
-    <div class="content">
-        <div class="myList">
-            <h1>Tiny Dungeon</h1>
-
-            <h2>My Skills</h2>
+<div class="content">
+    <div class="myList">
+        <div class="link">
+            <a href="rules.html" target="_blank">Rules</a>
         </div>
-        <div class="line"></div>
-        <div class="skillList">
-            <h2>All Skills</h2>
-            <button class="openBtn">Open All</button>
-            <button class="hideBtn">Hide All</button>
-            <div class="skill">
-                <p><strong>Acrobat</strong></p>
-                <div class="desc" id="desc1">
-                    <p> <em>It’s up there? No problem!</em></p>
-                    <p>You gain Advantage when Testing to do acrobatic tricks such as tumbling, long-distance jumps, climbing, and maintaining balance</p>
-                    <button class="addBtn">Add to my List</button>
-                </div>
+        <h1>Tiny Dungeon</h1>
+        <h2>My Traits</h2>
+    </div>
+
+    <div class="line"></div>
+    <div class="skillList">
+        <h2>All Traits</h2>
+        <button class="openBtn">Open All</button>
+        <button class="hideBtn">Hide All</button>
+        <div class="skill">
+            <p><strong>Acrobat</strong></p>
+            <div class="desc" id="desc1">
+                <p> <em>It’s up there? No problem!</em></p>
+                <p>You gain Advantage when Testing to do acrobatic tricks such as tumbling, long-distance jumps, climbing, and maintaining balance</p>
+                <button class="addBtn">Add to my List</button>
             </div>
-            <div class="skill">
-                <p><strong>Alchemist</strong></p>
-                <div class="desc" id="desc2">
-                    <p> <em>Dragon’s blood has many uses. It’s also great on salads</em></p>
-                    <p>Provided the right reagents and recipes, you can mix potions, elixirs, and poisons. You also gain Advantage when identifying unknown liquids</p>
-                    <button class="addBtn">Add to my List</button>
+        </div>
+        <div class="skill">
+            <p><strong>Alchemist</strong></p>
+            <div class="desc" id="desc2">
+                <p> <em>Dragon’s blood has many uses. It’s also great on salads</em></p>
+                <p>Provided the right reagents and recipes, you can mix potions, elixirs, and poisons. You also gain Advantage when identifying unknown liquids</p>
+                <button class="addBtn">Add to my List</button>
                 </div>
             </div>
             <div class="skill">
@@ -435,7 +445,7 @@
                     <button class="addBtn">Add to my List</button>
                 </div>
             </div>
-            <h2>Heritage Skills</h2>
+            <h2>Heritage Traits</h2>
             <div class="heritage-skill">
                 <p><strong>Bow Mastery</strong></p>
                 <div class="desc" id="desc41">
