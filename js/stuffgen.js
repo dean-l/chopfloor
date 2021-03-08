@@ -10,10 +10,10 @@ $(document).ready(function(){
             var randomPick = Math.random() * 10; 
 			if (randomPick <= 1) {
 				var magicCount = Math.floor(Math.random() * magic.length); 
-				$("#content").append('<h2>'+magic[magicCount]+magicCount'</h2>');
+				$("#content").append('<h2>'+magic[magicCount]+magicCount+'</h2>');
 			} else {
 				var trinketCount = Math.floor(Math.random() * trinkets.length); 
-				$("#content").append('<h2>'+trinkets[trinketCount]+trinketCount'</h2');
+				$("#content").append('<h2>'+trinkets[trinketCount]+trinketCount+'</h2');
 			}
         }
 	}
