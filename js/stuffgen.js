@@ -7,7 +7,7 @@ $(document).ready(function(){
 	
 	function printWord(words){
 		for(var i=0; i<words; i++){
-            var randomPick = Math.random() * 10; 
+            var randomPick = Math.random(); 
 			if (randomPick <= 1) {
 				var magicCount = Math.floor(Math.random() * magic.length); 
 				$("#content").append('<h2>'+magic[magicCount]+magicCount+'</h2>');
