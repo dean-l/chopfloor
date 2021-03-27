@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- code copyright (c) 2009-2018 drow <drow@bin.sh>                     -->
+  <!-- https://twitter.com/donjon_bin_sh                                   -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<head>
+  <meta charset="utf-8" />
+  <title>The Moathouse</title>
+
+  <style type="text/css" media="all">
+    
+    body { font-family: 'Asul', sans-serif; }
+    textarea { font-family: 'Asul', sans-serif; font-size: 14px; }
+
+    h1 { text-align: center; }
+    table { border-collapse: collapse; }
+
+    .center { text-align: center; }
+    table.center { margin: 0px auto; }
+
+    optgroup { margin: 1ex 1em;
+    font-style: normal; font-weight: normal; color: #808080; }
+    optgroup option { color: #000000; }
+
+    div.footnotes { margin-top: 6ex; text-align: center; }
+
+    @font-face {
+    font-family: 'Asul';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/asul/v10/VuJ-dNjKxYr42fQPWA.ttf) format('truetype');
+    }
+    @font-face {
+    font-family: 'Asul';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/asul/v10/VuJxdNjKxYr40U8qSKHdPA.ttf) format('truetype');
+    }
+
+    table.stats { margin: 2ex auto;
+    border: none; border-top: 1px solid; border-color: #cccccc; }
+    table.stats table { width: 100%; margin: 4px;
+    border: none; border-top: 1px solid; border-color: #cccccc; }
+    table.stats tr:hover td { background: #dedede; }
+    table.stats tr.empty:hover td { background: none; }
+    table.stats tr:hover ol li:hover { background: #ffffff; }
+    table.stats tr:hover table tr:hover td { background: #ffffff; }
+    table.stats tr:hover table tr.empty:hover td { background: none; }
+    table.stats tr:hover table tr:hover ol li:hover { background: #dedede; }
+
+    table.stats th { padding: 1ex 1em; background: #000000; color: #ffffff; }
+    table.stats td { padding: 4px 1em;
+    border: none; border-bottom: 1px solid; border-color: #cccccc;
+    vertical-align: top; }
+    table.stats td.icon img { border: 1px solid; border-color: #cccccc; }
+    table.stats td.section_title { width: 10% }
+    table.stats td.section { width: 8em; padding-top: 8px;
+    text-align: right; white-space: nowrap;
+    font-size: larger; font-weight: bold; }
+    table.stats td.detail { width: 15%;
+    text-align: right; font-style: italic; }
+    table.stats td.key { width: 8em;
+    text-align: right; white-space: nowrap; font-weight: bold; }
+
+    table.stats td.value { vertical-align: bottom; }
+    table.stats td.value p { margin: 0px; margin-top: 1ex; }
+    table.stats td.value p.icon { padding-left: 2em; text-indent: -2em; }
+    table.stats td.value ol { margin: 0px 0px 2ex 2em; padding: 0px; }
+    table.stats td.value ol li { margin: 0px; padding: 2px 0.5em; }
+    table.stats td.value hr { margin: 1ex 0em;
+    border: none; border-top: 1px solid; border-color: #cccccc; }
+
+    @media print {
+    a { color: black; text-decoration: none; }
+    }
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    /* dungeon/style.css
+    *
+    * copyright (c) 2006-2014 drow <drow@bin.sh>
+    * all rights reserved.
+    */
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    /* dungeon map */
+
+    table.map { margin: 2ex auto; border: none;
+    border-left: 1px solid; border-top: 1px solid; border-color: #333333; }
+    table.map td.cell { margin: 0px; padding: 0px;
+    border-right: 1px solid; border-bottom: 1px solid; border-color: #ccccff;
+    text-align: center; vertical-align: middle;
+    font-family: Helvetica, Geneva, sans-serif; font-size: 9px; }
+    table.map td.been { background: #deffde; }
+    table.map td.cell a { text-decoration: none; }
+    table.map td.fill { border-color: #333333; background: #000000; }
+
+    p.map { text-align: center; }
+    img { border: none; }
+    p.legend { text-align: center; }
+    p.legend span { margin: 0px 0.5em; white-space: nowrap; }
+
+    /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    /* variants */
+
+    div.variants { margin: 2ex 10%; margin-top: 4ex; border: 1px solid;
+    border-color: #999999; background: #dedede; text-align: center; }
+    div.variants div { margin: 2ex 0px; }
+    div.variants b { margin: 0px 0.5em; }
+    div.variants form { display: inline; margin: 0px 0.5em; }
+    div.variants input { margin: 0px 0.5em; }
+    div.variants select { margin: 0px 0.5em; }
+    div.working { text-align: center; font-size: 150%; }
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    </style>
+
+  <style type="text/css" media="print">
+    img { max-width: 100%; }
+    div.variants { display: none; }
+  </style>
+</head>
+<body>
+<h1>The Moathouse</h1>
+<p class="map">
+    <img id="map_img" src="moathouse.jpg" alt=""/>
+</p>
+
+<table class="stats parchment">
+    <tr class="section">
+        <td class="section_title"><a id="1" name="1">Room #1</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">FROGS IN THE POND:</td>
+                <td class="value">These nasty things will leap from their lurking places
+                    in the tall weeds near the edge of the pool, attacking madly,
+                    tor they are voraciously hungry at all times. They will surprise
+                    the party 1 through 4 on d6. If mounted, check to see if the
+                    horses panic and throw their riders or plunge into the marsh
+                    and become mired. The two larger frogs weigh over 150
+                    pounds each, and if their prey is over 5' from them, they will
+                    employ their tongues to wrap and draw the victim to their
+                    mouth. The others merely attempt to bite their prey to death.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value">6 <a href="https://www.dndbeyond.com/monsters/giant-frog" target="_blank">GIANT FROGS</a> (H.P.: 18): AC 11; Bite: +3, 1d6+1 piercing damage.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="2" name="2">Room #2</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">ROTTING DRAWBRIDGE:</td>
+                    <td class="value">When the moathouse was taken, part
+                        of the drawbridge was battered through, and men crossed
+                        on planks to gain access to the inner gates. The chains of the
+                        drawbridge were broken, and it fell. It has remained thus
+                        since. It is strong enough to bear a man, but there is a 50%
+                        chance that any horse crossing it will break through and
+                        injure a leg (30% for mules and 20% tor ponies).</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="3" name="3">Room #3</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">BROKEN GATES:</td>
+                    <td class="value"><p>One door is hanging open on one great
+                        hinge, the other is splintered and holed but still in position,
+                        wedged and shored closed from inside. A careful examination
+                        of the ground here will reveal that there are boot prints in
+                        the ground heading for the building steps at location 5.</p>
+                        <p>A pair of brigands is here, thus
+                            seeing the party approach and having given a warning to
+                            the group. DC 15 perception/stealth</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="4" name="4">Room #4</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">TOWER WITH UPPER PORTION COLLAPSED: </td>
+                    <td class="value">The inside is too
+                        dark to determine what is there if an arrow slit is peered
+                        through, and even infravision will reveal nothing, for its
+                        occupant lurks above: A great writhing plant is crouched on the
+                        remains of an upper floor some 15' overhead, and as soon as
+                        anyone steps into the tower it will drop. A scattering
+                        of husks and a few bones on the floor of the place might give
+                        the characters a warning, although the gleam of coins might
+                        tempt investigation. for there ore 3 s.p. and 7 c.p. amidst
+                        the rubbish, as well as on ivory box about the size of a large
+                        book which is easily worth 5 g.p. or more to the right buyer.</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value"><a href="https://www.dndbeyond.com/monsters/shambling-mound" target="_blank">SHAMBLING MOUND</a> (H.P.: 136): AC 15;
+                        HD 2+2;1 Slam: +7, 2d8+4 bludgeoning damage</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="5" name="5">Room #5</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">LITTERED STEPS TO THE HOUSE PORTION OF THE FORTRESS:</td>
+                    <td class="value">
+                        Again, a careful examination of these steps will show that
+                        some traffic (human, animal, and perhaps otherwise) comes
+                        this way. The doors at the head of the stairs are broken, one
+                        flat on the floor, the other sundered.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="6" name="6">Room #6</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">GREAT HALL: </td>
+                    <td class="value">Destroyed furniture, tottered banners and
+                        tapestries on the walls, and heaps of rotting cloth thrown into
+                        comers show that this was once a great audience chamber,
+                        richly appointed, which has been thoroughly searched,
+                        sacked, and despoiled. Leaves and dirt cover the floor, and
+                        cobwebs hang from walls and the ceiling above. Looking up,
+                        the party will see that pieces of beams and chunks of stone
+                        poke through, indicating that the upper stories of the place
+                        are totally destroyed and likely to be impassable to any
+                        creature larger than a rat.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="7" name="7">Room #7</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">BRIGANDS: </td>
+                    <td class="value">There are 7 brigands and their leader (Ogden)
+                        holed up in the "Black Chamber", the quarters of the
+                        former lord of the castle. The heavy door has been repaired
+                        by these outlaws, and it can be barred as well as bolted as it
+                        usually is. They will lock their door and retaliate if is battered, 
+                        but try to reason with the party to let them leave,
+                        taking their petty loot only and leaving the rest safely hidden.
+                        All remaining brigands will flee if their leader is downed. 
+                        They know nothing of the wizard or cult.  
+                    
+                        Each brigand has from 7 s.p. with him, and number 2 has 2 g.p. 
+                        The leader has 5 g.p and a gold chain worth 20 g.p. They have a chest
+                        buried under the rubble where the wall collapsed. It holds
+                        200 c.p., 2 bolts of fine cloth, a crystal
+                        flagon and four goblets, an inlaid wooden box
+                        with ivory handles and decorations, and 4 +1
+                        magic arrows. Each item is worth 3gp. Three turns of digging are required to uncover
+                        the chest of loot. The chamber is floored in block flagstones,
+                        has ebon-colored wall hangings, burnt and tattered now
+                        and the jumbled wreckage noted. The brigands pitch
+                        bedrolls in odd comers, and the remains of fires can be noted
+                        in the northern fireplace. They are totally unaware of the
+                        secret door and staircase down to the dungeons.</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value"><p>1x <a href="https://www.dndbeyond.com/monsters/bandit-captain" target="_blank">Bandit captain</a> (HP: 65) AC: 15; Scimitar: +5, 1d6+3 slashing</p>
+                    <p>7x <a href="https://www.dndbeyond.com/monsters/bandit" target="_blank">Bandits</a> (HP: 11) AC: 12; Scimitar: +3, 1d6+1 slashing</p></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="8" name="8">Room #8</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">STAIRWAY UP: </td>
+                    <td class="value">After a few steps the risers are covered with dust,
+                        crushed stone, broken wood, and burnt heaps of cloth. At the
+                        landing half way up they ore completely choked with rubble,
+                        and it is impossible to clear the loose stone and huge wall
+                        section so as to allow passage. (The entire upper floor is
+                        collapsed and ruined in any case.)</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="9" name="9">Room #9</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">LITTERED ROOM: </td>
+                    <td class="value">This place is empty, and its dirt and wreckage
+                        show no signs of any recent occupant, although a small rat
+                        or two will be seen scurrying away. It was once a conference
+                        chamber. There is nothing of any value within except a very
+                        fine greatsword wedged behind a splintered wall case,
+                        whose contents are long gone.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="10" name="10">Room #10</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">EMPTY BED CHAMBER: </td>
+                    <td class="value">Once the quarters of a castle troop
+                        leader or some other petty official, the place is now a total
+                        wreck, the bed chopped to pieces, the tuniture smashed or
+                        gone.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="11" name="11">Room #11</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">SALON: </td>
+                    <td class="value">This room was once very opulent, obviously a place
+                        where many expensive furnishings were, for the bits and
+                        tatters that remain still look rich (although there is nothing of
+                        value left). If the party seeks to investigate the room, scores of
+                        bats will angrily flutter around, and in the confusion it is 75%
+                        likely that whatever is held for a light source will be dropped
+                        and be extinguished. If anyone is striking at these bats when
+                        the lights go out, it is 50% likely that he or she will strike a party
+                        member-the one nearest. If a hit is scored, normal damage
+                        from the weapon accrues to the unfortunate victim.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="12" name="12">Room #12</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">BARRACKS:</td>
+                    <td class="value">This huge adder Is over 12' long. It crawled
+                        up the rubble spilled into the moat, and it found a nice safe
+                        lair where it could hole up after hunting. (The brigands give
+                        this whole corridor a wide berth after one of their numberwas
+                        killed by the reptile some weeks ago.) In the litter of its nesting
+                        place is a jewelled dagger worth 50 g.p.</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value"><a href="https://www.dndbeyond.com/monsters/1557809-giant-snake" target="_blank">GIANT SNAKE</a>
+                         (H.P.: 60): AC 12; Bite: +6, 2d6+4 piercing
+                         </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="13" name="13">Room #13</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">STOREROOM AND STAIRWAY TO DUNGEON: </td>
+                    <td class="value">Some rustling and
+                        squeaking will betray the presence of a hungry horde of rats. These rodents lair on the shelves along the walls, and
+                        some lurk around the staircase. They are hungry and will
+                        attack without fear. Although they have no treasure, an upper
+                        shelf of the storage area has an overlooked jug of oil
+                        (equivalent of 1O flasks), and on the fifth stair down is a gold
+                        ring worth 4 g.p. (but unless the party is searching the area,
+                        there is only a 5% chance per person using the stairs that it will
+                        be seen-check for each).</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value">13
+                        <a href="https://www.dndbeyond.com/monsters/giant-rat" target="_blank">GIANT RATS</a> (H.P.: 7): AC 12; Bite: +4, 1d4+2 piercing</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="moathouse_dungeon.html">To the Moathouse Dungeon</a></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="14" name="14">Room #14</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">EMPTY TROPHY ROOM:</td>
+                    <td class="value">Only a few mangy pelts, stuffed heads,
+                        and shattered antlers indicate the former status of the
+                        chamber. All worthwhile items are looted. It is possible to
+                        spend considerable time searching the litter here, but
+                        nothing of value will be found.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="15" name="15">Room #15</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">EMPTY ROOM: </td>
+                    <td class="value">The place was the domicile of the major-domo
+                        of the castle, but it is stripped of everything save broken and
+                        ruined furnishings now. One wall cresset remains near the
+                        outer wall, worth 3 g.p. in its present condition.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="16" name="16">Room #16</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">DESERTED KITCHEN: </td>
+                    <td class="value">The remains of moldering foodstuffs and
+                        kitchen work tables are visible. A wooden cask near the
+                        fireplace on the north wall looks inviting, but if anyone
+                        approaches it he or she will be attacked by a giant tick. This horror came in
+                        through the chimney. It has no treasure.</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value"><a href="https://www.dndbeyond.com/monsters/1557793-giant-tick" target="_blank">GIANT TICK</a>
+                        (H.P.: 26): AC 14; Bite: +5, 1d8+3 piercing</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="17" name="17">Room #17</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">PARTIALLY COLLAPSED CHAMBER:</td>
+                    <td class="value">Remains of cots and plain
+                        wooden chests indicate that this was once a barracks room
+                        for some of the castle guards-undoubtedly the human sort.
+                        If the overhead rubble is forcefully moved there is a 50%
+                        chance per round that it will fall further, causing 1-6 hit points
+                        of damage to each character in the place-check each
+                        round that anyone shoves or levers it. Near the south end of
+                        the room is an intact chest, and a monster as well. The intact chest holds 3 c.p., a scale mail tunic, a light
+                        crossbow, and a case of 24 crossbow bolts.</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value"><a href="https://www.dndbeyond.com/monsters/giant-subterranean-lizard" target="_blank">GIANT LIZARD</a>
+                        (H.P.: 66): AC 14; Bite: +7, 2d10+5 piercing;</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+  <!-- END OF CONTENT -->
+
+</body>
+</html>

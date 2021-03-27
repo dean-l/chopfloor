@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- code copyright (c) 2009-2018 drow <drow@bin.sh>                     -->
+  <!-- https://twitter.com/donjon_bin_sh                                   -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<head>
+  <meta charset="utf-8" />
+  <title>The Moathouse Dungeon</title>
+
+  <style type="text/css" media="all">
+    
+    body { font-family: 'Asul', sans-serif; }
+    textarea { font-family: 'Asul', sans-serif; font-size: 14px; }
+
+    h1 { text-align: center; }
+    table { border-collapse: collapse; }
+
+    .center { text-align: center; }
+    table.center { margin: 0px auto; }
+
+    optgroup { margin: 1ex 1em;
+    font-style: normal; font-weight: normal; color: #808080; }
+    optgroup option { color: #000000; }
+
+    div.footnotes { margin-top: 6ex; text-align: center; }
+
+    @font-face {
+    font-family: 'Asul';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/asul/v10/VuJ-dNjKxYr42fQPWA.ttf) format('truetype');
+    }
+    @font-face {
+    font-family: 'Asul';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/asul/v10/VuJxdNjKxYr40U8qSKHdPA.ttf) format('truetype');
+    }
+
+    table.stats { margin: 2ex auto;
+    border: none; border-top: 1px solid; border-color: #cccccc; }
+    table.stats table { width: 100%; margin: 4px;
+    border: none; border-top: 1px solid; border-color: #cccccc; }
+    table.stats tr:hover td { background: #dedede; }
+    table.stats tr.empty:hover td { background: none; }
+    table.stats tr:hover ol li:hover { background: #ffffff; }
+    table.stats tr:hover table tr:hover td { background: #ffffff; }
+    table.stats tr:hover table tr.empty:hover td { background: none; }
+    table.stats tr:hover table tr:hover ol li:hover { background: #dedede; }
+
+    table.stats th { padding: 1ex 1em; background: #000000; color: #ffffff; }
+    table.stats td { padding: 4px 1em;
+    border: none; border-bottom: 1px solid; border-color: #cccccc;
+    vertical-align: top; }
+    table.stats td.icon img { border: 1px solid; border-color: #cccccc; }
+    table.stats td.section_title { width: 10% }
+    table.stats td.section { width: 8em; padding-top: 8px;
+    text-align: right; white-space: nowrap;
+    font-size: larger; font-weight: bold; }
+    table.stats td.detail { width: 15%;
+    text-align: right; font-style: italic; }
+    table.stats td.key { width: 8em;
+    text-align: right; white-space: nowrap; font-weight: bold; }
+
+    table.stats td.value { vertical-align: bottom; }
+    table.stats td.value p { margin: 0px; margin-top: 1ex; }
+    table.stats td.value p.icon { padding-left: 2em; text-indent: -2em; }
+    table.stats td.value ol { margin: 0px 0px 2ex 2em; padding: 0px; }
+    table.stats td.value ol li { margin: 0px; padding: 2px 0.5em; }
+    table.stats td.value hr { margin: 1ex 0em;
+    border: none; border-top: 1px solid; border-color: #cccccc; }
+
+    @media print {
+    a { color: black; text-decoration: none; }
+    }
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    /* dungeon/style.css
+    *
+    * copyright (c) 2006-2014 drow <drow@bin.sh>
+    * all rights reserved.
+    */
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    /* dungeon map */
+
+    table.map { margin: 2ex auto; border: none;
+    border-left: 1px solid; border-top: 1px solid; border-color: #333333; }
+    table.map td.cell { margin: 0px; padding: 0px;
+    border-right: 1px solid; border-bottom: 1px solid; border-color: #ccccff;
+    text-align: center; vertical-align: middle;
+    font-family: Helvetica, Geneva, sans-serif; font-size: 9px; }
+    table.map td.been { background: #deffde; }
+    table.map td.cell a { text-decoration: none; }
+    table.map td.fill { border-color: #333333; background: #000000; }
+
+    p.map { text-align: center; }
+    img { border: none; }
+    p.legend { text-align: center; }
+    p.legend span { margin: 0px 0.5em; white-space: nowrap; }
+
+    /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+    /* variants */
+
+    div.variants { margin: 2ex 10%; margin-top: 4ex; border: 1px solid;
+    border-color: #999999; background: #dedede; text-align: center; }
+    div.variants div { margin: 2ex 0px; }
+    div.variants b { margin: 0px 0.5em; }
+    div.variants form { display: inline; margin: 0px 0.5em; }
+    div.variants input { margin: 0px 0.5em; }
+    div.variants select { margin: 0px 0.5em; }
+    div.working { text-align: center; font-size: 150%; }
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    </style>
+
+  <style type="text/css" media="print">
+    img { max-width: 100%; }
+    div.variants { display: none; }
+  </style>
+</head>
+<body>
+<h1>The Moathouse Dungeon</h1>
+<p class="map">
+    <img id="map_img" src="moathouse_dungeon.jpg" alt=""/>
+</p>
+
+<table class="stats parchment">
+    <tr class="section">
+        <td class="section_title"><a id="1" name="1">Room #1</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">DUNGEON LANDING:</td>
+                <td class="value">These two nauseous blobs of matter have been carefully
+                    placed and fed in a position over the central arch of the
+                    stairway. Any person coming down the stairs and stepping off
+                    into the dungeon floor is 75% likely to cause one of the two
+                    'slimes to dislodge itself and fall squarely upon the victim. Any
+                    cautious approach, either looking up or moving along the
+                    walls, will avoid this; but then anyone passing through the
+                    northern portion of the 1 O' square will run the same (75%) risk
+                    of being attacked. There is no treasure.
+                    A few torn sacks, broken barrels, and shattered weapons
+                    racks show that this large area was once a storage place
+                    and armory for the fortress. There are great heaps of worthless
+                    rubble and broken containers and furniture at the western
+                    end of the room-all obviously junk (but hiding the two doors
+                    to rooms 2 and 3).
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value">GREEN SLIME: (H.P.: 10, 7):AC 7; HD 2; MoveO (drops); contact
+                        with exposed flesh turns victim to green slime in 1-4 rounds.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="moathouse.html">To the Moathouse</a></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="2" name="2">Room #2</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">STORE ROOM 1:</td>
+                    <td class="value">Obviously, the lock is new and well-oiled. The
+                        door will have to be chopped/ smashed down by axe and/or
+                        hammer, taking 50 points to splinter and open. Inside are 30
+                        shields, 12 suits of leather armor, and barrels of salted meat
+                        (behind which are two 5 gallon kegs of brandy worth 80 g.p.
+                        each).</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="3" name="3">Room #3</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">STORE ROOM 2:</td>
+                    <td class="value">Same as 2., above. Behind this portal are 50
+                        spears, 1 O glaives, 6 guisarmes, 3 battleaxes, 70 black capes
+                        with a yellow eye of fire sewed on them, more containers of
+                        provisions, and two crates holding 120 arrows and 200
+                        crossbow bolts respectively.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="4" name="4">Room #4</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">CORRIDOR LINED WITH CELLS: </td>
+                    <td class="value">Anyone entering this area will
+                        be attacked by the monsters lurking in pairs in these cubicles.
+                        The zombies will come shuffling forth immediately upon the
+                        entry of any character, so the engagement will be with but a
+                        pair initially, another pair coming into combat on each
+                        successive melee round. They will try to drive the intruders into
+                        area 5. Although there is no treasure with these monsters, a
+                        500 g.p. gem was long ago hidden behind a loose stone in
+                        the last cell, and if the party searches this cell, it is 50% likely
+                        per searcher per round that the loose piece in the wall will be
+                        detected.</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value">12 ZOMBIES (H.P.: 15, 14, 13, 12, 3x10, 9, 8, 6, 5, 4) :AC 8; HD 2;
+                        Move 6"; 1 attack for 1-8 hit points of damage; always strike
+                        last, but piercing weapon hits cause only 1 hit point of
+                        damage.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="5" name="5">Room #5</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">TORTURE CHAMBER: </td>
+                    <td class="value">At first glance this place will seem long
+                        abandoned, for dust, dirt, and cobwebs abound. A careful
+                        perusal will show that several of the skeletons in the place are
+                        recently dead, and some of the instruments and mechnisms
+                        have been used very recently indeed. Some drops of
+                        blood can be noticed trailing south IF MINUTE CARE IS TAKEN
+                        IN INSPECTING THE FLOOR. Without such a lead it is 90%
+                        unlikely that the secret door in the pillar will be discovered
+                        (check only once for each individual looking, but ro.11 dice as
+                        if normal checks were being made). lfthe blood trail (from a
+                        sloppy ghoul) is noted, the chances of locating the secret
+                        door mechanism are normal-in this case 1 in 6 for non-elven
+                        characters, 2 in 6 for elven. Inside the column is a shaft some
+                        30' deep, with iron rungs set into the stonework for descent.
+                        They are obviously used.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="6" name="6">Room #6</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">LITIERED STOREROOM: </td>
+                    <td class="value">The mess of filth and broken junk is
+                        completely unremarkable. If the party is cautious. however,
+                        they will be 50% likely to note grease on the door hinges if they
+                        examine the door once it is opened. (Note that it opens on a
+                        1 - 4 for an average strength person, and it makes no noise
+                        when so doing).</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="7" name="7">Room #7</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">GUARD ROOM:</td>
+                    <td class="value">This ogre has been lured into service by the promise of gauds and fresh
+                        meat-plenty of it being human flesh, of course. He has been
+                        instructed to guard the room against any creatures who do
+                        not wear the symbol of the new master (the yellow eye offire)
+                        and/ or know the proper secret sign (crossed arms before the
+                        face). Any party entering will not be instantly attacked, but if
+                        they do not make the secret sign, even if properly dressed,
+                        Lubash (the ogre) will attck. He will devour any killed at the
+                        first opportunity, and toss wounded and prisoners into room
+                        8. He will pursue a fleeing party, but only as far as the stairs up
+                        (1., above). Lubash has a heap of old clothing and skins fora
+                        bed, and a large wooden chest with his treasures-worthless
+                        glass beads, brass candlesticks and other trash, 823 c.p., 46
+                        s.p., and 3 g.p. However, by some trick of fate, a small-sized
+                        elven cloak is intermixed with the old carpeting and rags of
+                        his nest.</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value">OGRE (H.P.: 21): AC S; HD S +1; Move 9"; 1 attack using
+                        bardiche for 2-8 +S (7-13) hit points of damage.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="8" name="8">Room #8</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">HEAVILY BARRED OAK DOOR: </td>
+                    <td class="value">This is Lubash's pantry. The grisly
+                        larder currently contains a pair of humans who have
+                        undergone only mild torture, and a badly beaten gnome
+                        whom Lubash intended to dine upon soon-a mere snack,
+                        and tough, but a nice change nonetheless. The humans will
+                        admit to being merchants, and both will promise large rewards
+                        for their release, vowing to send the monies to
+                        Hommlet as soon as they return to Dyvers. Four weeks after
+                        their release a passing caravan will deliver 100 s.p. per
+                        merchant to the rescuers . .. The gnome was caught spying
+                        by some gnolls, and he too will ask to be freed, giving a plain
+                        iron ring to whomever first so agrees. This ring is recognized
+                        70% of the time by gnomes within 100 miles of the areas as a
+                        sign that the bearer is an ally, thus making it 25% more
+                        probable that they will be friendly and helpful.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="9" name="9">Room #9</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">TRAP AND TRAP RELEASE AREAS:</td>
+                    <td class="value">The party will not notice that a
+                        huge iron grate falls from above at this point, for the underside
+                        is even with the tunnel ceiling 1 S' above, and painted a
+                        grayish brown to blend with the stone. The secret door leads
+                        to a winch which hauls the grate back up. The trap is triggered
+                        at locations 11., below.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="10" name="10">Room #10</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">BUGBEAR DEN:</td>
+                    <td class="value">These creatures have
+                        recently been recruited by the New Master (see 18., below),
+                        and each has 12 g.p. The leader (17 hit points) has a silver
+                        necklace set with S chrysoprase gems (4 x SO, 1 x 100 g.p.
+                        value) worth 450 g.p. which he wears as a bracelet. If any
+                        lights are shown in the chamber to the south, these creatures
+                        will pad down to investigate ... They surprise opponents 50%
+                        of the time and will attack. They know only that the "Master"
+                        is quartered somewhere to the south.</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value">6 BUGBEARS (H.P.: 17, 14, 12, 2x11, 9):AC S; HD 3+1; Move9";
+                        1 attack for 2-8 hit points damage each.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="11" name="11">Room #11</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">FALSE DOOR: </td>
+                    <td class="value">When this door is pulled open, a bare stonewall
+                        is revealed behind. At the same time a distant clangor will
+                        sound-the grate falling.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="12" name="12">Room #12</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">GNOLL WORKERS:</td>
+                    <td class="value"> Originally there were 14
+                        of these humanoids recruited to extend the dungeon, but
+                        activities to the east and south have taken their toll. Each
+                        gnoll has 3-18 s.p. and a like number of coppers as well. The
+                        leader has a 1 O g.p. gem and 11 g.p. as well. These monsters
+                        are not pleased with their loot nor with the greater status
+                        accorded to the bugbears newly joined. They will fight
+                        fiercely, even to the death, but if a parley offer is made they
+                        will be 75% inclined to stop and listen; and if they are offered
+                        6 or more gold pieces each, with three or more times that
+                        amount for the leader, they will desert. If double the above is
+                        initially offered and paid, they will lead the party to the north
+                        passage going to where "Master'' is, and even tell the party
+                        that there are human guards. The gnolls will then proceed
+                        east to the exit and never come back. Remember that
+                        conversation with these creatures must be in gnoll, bugbear
+                        or ogre speech.</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value">9 GNOLLS (H.P.: 14, 12, 3x10, 3x9; 7): ACS; HD 2; Move 9"; 1
+                        attack for 2-8 hit points damage, 2 gnolls are armed with great
+                        longbows in addition to battleaxes.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="13" name="13">Room #13</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">SUBTERRAINIAN POOL:</td>
+                    <td class="value">When the
+                        dungeons were dug a natural pool of water was found, and
+                        as it was considerably below floor level, the area was dug
+                        lower and the entrance to the pool enlarged. Evidently, some
+                        connection to an underground stream exists, for some time
+                        ago, this monster took the pool as its own, and it now disputes
+                        with any creatures entering, hoping to make a meal in the
+                        bargain. (It is held at bay by the men-at-arms from area 16.,
+                        below, by pole arms and prodding; all others take their
+                        chances.) The monster has been fairly successful, and there
+                        are bones and litter around and in the pool, although the
+                        central section is very deep. If badly wounded, the crayfish
+                        retreats into the deep water of the pool and does not return
+                        for at least a day. There are 19 g.p., 30 s.p., and 17 c.p. and a
+                        sword near the back (southwest) pool edge. In the water on
+                        a ledge is a platinum pin set with a ruby (2,000 g.p. value)
+                        and a bone tube. The pin is under a skull (human) and the
+                        tube under some bones. Unless searchers use their hands,
+                        there is a 50% chance that either or both treasures will slip off
+                        the ledge and be lost below. The tube is water-tight and
+                        contains a scroll of magic-user spells (push, stinking
+                        cloud, fly).</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value">GIANT CRAYFISH IN POOL (H.P.: 27): AC 4; HD 4 +4; Move
+                        6"//12"; 2 attacks for 2-12 hit points each.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="14" name="14">Room #14</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">BURIAL CRYPTS:</td>
+                    <td class="value">The builders planned for a long tenancy,
+                        although expectations were not met. Most of the niches ore
+                        empty, although a few contain splintered coffins, wrappings,
+                        and gnawed and split bones (a sure sign that all is not quite
+                        well ... ). Squatting in the south end of the room are a pack of ghouls.
+                        These creatures get corpses to eat from the "Master'' -sometimes
+                        even prey not dead so that these horrible creatures can have
+                        some "sport" (area 5., above) before dining. They will attack
+                        immediately upon seeing the party.</td>
+                        <ol type="A">
+                            <li>The bock of a crypt is broken out and there is an earth
+                                tunnel, foul and damp and only about S' high. It leads to a
+                                noisome den (A) where a heap of bones and skulls is
+                                made where the ghouls nest. In this mess is the following
+                                treasure: 800 s.p., 7 vials of holy water, a potion of undead
+                                control, and a scroll of protection from undead. A trail of
+                                gold pieces ( 1-4 per 10' of tunnel) begins at area B.</li>
+                            <li>A warren of small (3' diameter and smaller) burrows
+                                starts here. Mapping is not possible. After about 30' the
+                                gold can no longer be found, and if the party continues
+                                post the portion shown on the map, simply allow them to
+                                proceed for another hundred or so feet, and then tell them
+                                they ore hopelessly lost.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value">4 GHOULS (H.P.: 12, 10, 8, 7):AC 6; HD 2; 3attacksfor 1-4/1-4/1-
+                        8 hit points per attack (claw/claw/bite). Any human or demihumon
+                        creature struck by a ghoul must save versus
+                        paralyzation or become immobile for 3-12 turns.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="15" name="15">Room #15</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">SECRET ENTRANCE:</td>
+                    <td class="value">The passage here begins to slant gradually upwards, and a
+                        slight breeze con be felt ofter 100 feet beyond the edge of the
+                        mop. At 400' beyond the edge the tunnel exits in a narrow
+                        opening amidst rocks and thick briers and brambles.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="16" name="16">Room #16</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">GUARDROOM:</td>
+                    <td class="value">These men are the alert and
+                        fearless guards of the "New Master'', garbed all in block, with
+                        gold eyes of fire embroidered upon their tunics and cloaks.
+                        Each of these guards is in on "X" position, and the sergeant is
+                        at location 16. When attacked they send up a low hooting sound while
+                        engaging opponents. This brings the balance of their fellows,
+                        as well as reinforcements from 17. (3 rounds to ready, 1 round
+                        to reach chamber 16., and another to get 1 O' to 60' into the
+                        south passageway). If they are being defeated, guardsmen will begin howling, and the balance of the guards from 17.,
+                        and "Master'' as well, will then proceed to the fray-3 rounds
+                        to reach 16., etc. Each guardsman has 1-4 p.p., 2-5 g.p., and
+                        2-8 s.p. The sergeant wears a gold neckchain of office worth
+                        50 g.p., and he has double the amount of each coin
+                        indicated above in his purse.</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value">6 GUARDSMEN AND 1 SERGEANT (H.P.: 7, 6, 2x5, 2x4, 1 S): AC
+                        6x5, 1x4; HD: 6x1 (d6+1), 1 x 2 (+4); Move 9"; 1 attack by
+                        weapon type (as shown below).</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="17" name="17">Room #17</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">GUARDS BARRACKS CHAMBER: </td>
+                    <td class="value">Quartered here are 12 guards
+                        and 2 sergeants (exactly as above, just double the numbers
+                        for each). Half of these men are armed with spears instead of
+                        crossbows. and these 6 and their sergeant will come to reinforce
+                        the watchers at 16. if fighting occurs. With them is the
+                        "Master's" lieutenant, a 4th level fighter-S 15, 112, W 10, D 15,
+                        C 17, Ch 7-H.P.: 31; AC 1 (plate, shield, +1 for dexterity); move
+                        6"; 1 attack by weapon. He has sword, hand axe, and
+                        dagger. He stays near his liege lord always, and will
+                        accompany him wherever he goes. Besides a few coins
+                        (3-12 g.p.), the lieutenant has 29100 g.p. gems in his purse.
+                        His chain has a 500 g.p. topaz and is worth 1,000 g.p.
+                        In the 20' x 40' room below are supplies for the guardssalted
+                        meat, weak wine in a barrel, water, hard biscuits, dried
+                        fruit, etc. There are also mounds of fresh rushes and grass-for
+                        bedding and the two horses (light war-horses) stabled at the
+                        end of the place. Saddles, tack, and a lance are nearby.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="section">
+        <td class="section_title"><a id="18" name="18">Room #18</a></td>
+        <td>
+            <table class="section">
+                <tr>
+                    <td class="detail">CHAMBER OF THE NEW MASTER:</td>
+                    <td class="value">
+                        Lareth the Beautiful is the dark hope of chaotic evil: young,
+                        handsome. well endowed in abilities and aptitudes, thoroughly
+                        wicked, depraved, and capricious. Whomever harms
+                        Lareth had better not brag of it in the presence of one who will
+                        inform the Demoness Lolth! He has been sent into this area to
+                        rebuild a force of men and humanoid fighters to gather loot
+                        and restore the Temple of Elemental Evil to its former glory.
+                        Of course. Lareth is but one of many so charged, but he is
+                        looked upon with special favor and expectation. He and his
+                        minions have been careful to raid far from this area, never
+                        nearer than three or four leagues, traveling on foot or being
+                        carried in wagons of the traders from Hommlet. None of the
+                        victims are ever left alive to tell the tale, and mysterious
+                        disappearances are all that can be remarked upon, for no
+                        trace of men, mounts, goods, wagons or draft animals is ever
+                        found.
+                        Evil to the core, Lareth is cunning, and if the situation appears
+                        in doubt, he will use bribery and honeyed words to sway the
+                        balance to his favor. He is not at all adverse to gaining new
+                        recruits of any sort, and will gladly accept adventurers into
+                        the ranks, but he will test and try them continually. Those who
+                        arouse suspicion will be quietly murdered in their sleep; those
+                        with too much promise will be likewise dealt with, for Lareth
+                        wants no potential usurpers or threats to his domination.
+                        His room is lavishly furnished with thick rugs, wall hangings,
+                        soft chairs and couch, cushions. wines and liquors, dishes of
+                        sweetmeats. A brazier continually burns to warm the place
+                        and send a fragrant incense into the air. While he carries but
+                        9 p.p. and a 1,000 g.p. gem with him, Lareth has in plain sight
+                        silver serving pieces and goblets worth 4,000 g.p. and an
+                        alabaster box full of unguent whose total value is 800 g.p.
+                        These. and a string of matched fire opals (10,000 g.p. value in
+                        1 O stones. plus gold settings with diamond chips and gold
+                        chain for a total worth of 15,000 g.p.), he will offer as a ransom
+                        for his life. Bound around Lareth's left arm is a phylactery of
+                        action, a clerical magic item which makes the wearer
+                        impervious to paralyzation of any sort, including a hold spell
+                        of any kind.</td>
+                </tr>
+                <tr>
+                    <td class="key">Monster</td>
+                    <td class="value">LARETH THE BEAUTIFUL: 5th level cleric-S 18, I 9, w 18,
+                        D 17, C 16, Ch 18-H.P.: 44; AC -1 ( +1 plate with +3 for
+                        dexterity); move 12"; staff of striking (20 charges) and mace.</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+  <!-- END OF CONTENT -->
+
+</body>
+</html>
