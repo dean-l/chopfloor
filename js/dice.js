@@ -33,7 +33,7 @@ $(document).ready(function(){
         var html3 = "";
         html1 = html1 + '<div class="result">';
         for (i=0; i<number; i++) {
-            var result = Math.ceil(Math.random() * (dice-1))
+            var result = Math.ceil(Math.random() * (dice))
             html2 = html2 + '<div class="dice"><p>' + result + "</p></div>";
             total = total + Number(result);
         }
