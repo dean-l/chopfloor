@@ -171,8 +171,22 @@ function generateItems() {
         case 0:
             var itemCost = 50;
             var html = '<table class="table"><thead><tr><th scope="col">Item</th><th scope="col">Rarity</th><th scope="col">Cost</th></thead><tbody><tr>';
-            var pohCost = Math.ceil(40 + Math.random()*20);
-            var pohNum = Math.ceil(Math.random()*count/2+2);
+            var pohCost;
+            var pohNum;
+            switch(count) {
+                case 5:
+                    pohCost = Math.ceil(40 + Math.random()*20);
+                    pohNum = Math.ceil(Math.random()*(count/2));
+                    break;
+                case 10:
+                    pohCost = Math.ceil(40 + Math.random()*20);
+                    pohNum = Math.ceil(Math.random()*(count/2));
+                    break;
+                case 25:
+                    pohCost = Math.ceil(40 + Math.random()*20);
+                    pohNum = Math.ceil(Math.random()*(count/2));
+                    break;
+            }
             html += "<tr><td>" + pohNum + " x " + mItemNameList[1][0] + "</td><td>" + mItemNameList[1][1] + "</td><td>" + pohCost + " GP each</td></tr>";
             for (var i = 0; i < count; i++) {
                 var newItem = randValue(mItemNameList);
