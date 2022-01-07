@@ -157,13 +157,13 @@ function generateItems() {
     var count;
     switch(Number(document.getElementById('sel4').selectedIndex)) {
         case 0:
-            count = 3;
+            count = 5;
             break;
         case 1:
-            count = 7;
+            count = 10;
             break
         case 2:
-            count = 15;
+            count = 25;
             break;
     }
     var shopClass = Number(document.getElementById('sel3').selectedIndex);
@@ -184,23 +184,24 @@ function generateItems() {
                 }
                 switch(newItem[1]){
                     case "Common":
-                        itemCost = 50;
+                        itemCost = '50 - 100GP';
                         break;
                     case "Uncommon":
-                        itemCost = 100;
+                        itemCost = '100 - 500GP';
                         break;
                     case "Rare":
-                        itemCost = 500;
+                        itemCost = '500 - 5000GP';
                         break;
                     case "Very Rare":
-                        itemCost = 5000;
+                        itemCost = '5000 - 50000GP';
                         break;
                     case "Legendary":
-                        itemCost = 50000;
+                        itemCost = '50000GP+';
                         break;
                     }
-                var calcCost = parseFloat(((itemCost*0.8) + (Math.random()*itemCost*0.4)).toPrecision(2));
-                html += "<tr><td>" + newItem[0] + "</td><td>" + newItem[1] + "</td><td>" + calcCost + " GP</td></tr>";
+                //var calcCost = parseFloat(((itemCost*0.8) + (Math.random()*itemCost*0.4)).toPrecision(2));
+
+                html += "<tr><td>" + newItem[0] + "</td><td>" + newItem[1] + "</td><td>" + itemCost + "</td></tr>";
             }
             html += '</tbody></table>';
             break;
