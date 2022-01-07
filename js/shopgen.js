@@ -175,15 +175,15 @@ function generateItems() {
             var pohNum;
             switch(count) {
                 case 5:
-                    pohCost = Math.ceil(60 + Math.random()*20);
+                    pohCost = Math.ceil(55 + Math.random()*10);
                     pohNum = Math.ceil(Math.random()*2+2);
                     break;
                 case 10:
-                    pohCost = Math.ceil(50 + Math.random()*20);
+                    pohCost = Math.ceil(50 + Math.random()*10);
                     pohNum = Math.ceil(Math.random()*4+4);
                     break;
                 case 25:
-                    pohCost = Math.ceil(40 + Math.random()*20);
+                    pohCost = Math.ceil(45 + Math.random()*10);
                     pohNum = Math.ceil(Math.random()*8+8);
                     break;
             }
