@@ -1,4 +1,4 @@
-import { mItemNameList, itemNameList, aItemNameList, asItemTypeList, amItemTypeList, alItemTypeList, wItemNameList, wItemTypeList } from './itemList.js'
+import { mcItemNameList, muItemNameList, mrItemNameList, mvItemNameList, mlItemNameList, itemNameList, aItemNameList, asItemTypeList, amItemTypeList, alItemTypeList, wItemNameList, wItemTypeList } from './itemList.js'
 import { raceNameList, statList, hfRaceNameList, hlRaceNameList, gRaceNameList, eRaceNameList, kRaceNameList, dm1RaceNameList, dm2RaceNameList, df1RaceNameList, df2RaceNameList, dlRaceNameList, lRaceNameList } from './raceList.js'
 import { shopNameList, classNameList, mShopNameList1, mShopNameList2, mShopNameList3, aShopNameList, wShopNameList, tShopNameList } from './nameList.js'
 
@@ -141,54 +141,36 @@ function generateItems() {
     var shopClass = Number(document.getElementById('sel3').selectedIndex);
     switch(Number(document.getElementById('sel1').selectedIndex)) {
         case 0:
-            var itemCost = 50;
             var html = '<table class="table"><thead><tr><th scope="col">Item</th><th scope="col">Rarity</th><th scope="col">Cost</th></thead><tbody><tr>';
-            var pohCost;
-            var pohNum;
-            switch(count) {
-                case 5:
-                    pohCost = Math.ceil(55 + Math.random()*10);
-                    pohNum = Math.ceil(Math.random()*2+2);
-                    break;
-                case 10:
-                    pohCost = Math.ceil(50 + Math.random()*10);
-                    pohNum = Math.ceil(Math.random()*4+4);
-                    break;
-                case 25:
-                    pohCost = Math.ceil(45 + Math.random()*10);
-                    pohNum = Math.ceil(Math.random()*8+8);
-                    break;
-            }
+            var pohCost = Math.ceil(55 + Math.random()*10);
+            var pohNum = Math.ceil(Math.random()*2+2);
             html += "<tr><td>" + pohNum + " x " + mItemNameList[1][0] + "</td><td>" + mItemNameList[1][1] + "</td><td>" + pohCost + " GP each</td></tr>";
             for (var i = 0; i < count; i++) {
-                var newItem = randValue(mItemNameList);
-                if(newItem[1] != "Uncommon"){
-                    newItem = randValue(mItemNameList);
-                    if(newItem[1] != "Uncommon" || newItem[1] != "Rare"){
-                        newItem = randValue(mItemNameList);
-                    }                 
-                }
-                switch(newItem[1]){
-                    case "Common":
-                        itemCost = '50 - 100GP';
-                        break;
-                    case "Uncommon":
-                        itemCost = '100 - 500GP';
-                        break;
-                    case "Rare":
-                        itemCost = '500 - 5000GP';
-                        break;
-                    case "Very Rare":
-                        itemCost = '5000 - 50000GP';
-                        break;
-                    case "Legendary":
-                        itemCost = '50000GP+';
-                        break;
-                }
-                //var calcCost = parseFloat(((itemCost*0.8) + (Math.random()*itemCost*0.4)).toPrecision(2));
-
-                html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
+                var newItem = randValue(mcItemNameList);
+                var itemCost = '50 - 100GP';
+                html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
             }
+            for (var i = 0; i < count; i++) {
+                var newItem = randValue(muItemNameList);
+                var itemCost = '100 - 500GP';
+                html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
+            }
+            for (var i = 0; i < count; i++) {
+                var newItem = randValue(mrItemNameList);
+                var itemCost = itemCost = '500 - 5000GP';
+                html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
+            }
+            for (var i = 0; i < count; i++) {
+                var newItem = randValue(mvItemNameList);
+                var itemCost = '5000 - 50000GP';
+                html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
+            }
+            for (var i = 0; i < count; i++) {
+                var newItem = randValue(mlItemNameList);
+                var itemCost = '50000GP+';
+                html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
+            }
+
             html += '</tbody></table>';
             break;
         case 1:
