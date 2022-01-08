@@ -16,6 +16,7 @@ function randomise() {
     document.getElementById('sel3').selectedIndex = ri;
     randomItem();
 }
+window.randomise = randomise;
 
 function generate() {
     $('#result').empty();
@@ -24,6 +25,7 @@ function generate() {
     generateShop();
     generateItems();
 }
+window.generate = generate;
 
 function generateShop() {
     $("#shop").empty();
@@ -67,6 +69,7 @@ function generateShop() {
     var html = "<h2>" + shop + "</h2>";
     $("#shop").append(html);
 }
+window.generateShop = generateShop;
 
 function generateRace() {
     $("#race").empty();
@@ -109,6 +112,7 @@ function generateRace() {
     var html = "<p>A " + $('#sel3 option:selected').text() + " class establishment run by <span id='pname'>" + fullName + "</span>, a " + randValue(statList) + " and " + randValue(statList) + " " + $('#sel2 option:selected').text() + ", for " + years + " years</p>";
     $("#race").append(html);
 }
+window.generateRace = generateRace;
 
 function generateItems() {
     $("#items").empty();
@@ -239,24 +243,28 @@ function randomShop() {
     generateShop();
     generateItems();
 }
+window.randomShop = randomShop;
 
 function randomRace() {
     var ri = randIndex(raceNameList);
     document.getElementById('sel2').selectedIndex = ri;
     generateRace();
 }
+window.randomRace = randomRace;
 
 function randomClass() {
     var ri = randIndex(classNameList);
     document.getElementById('sel3').selectedIndex = ri;
     generateItems();
 }
+window.randomClass = randomClass;
 
 function randomItem() {
     var ri = randIndex(itemNameList);
     document.getElementById('sel4').selectedIndex = ri;
     generateItems();
 }
+window.randomItem = randomItem;
 
 function randValue(list) {
     return list[Math.floor(Math.random() * list.length)];
