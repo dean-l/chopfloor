@@ -1,6 +1,6 @@
-import { mItemNameList, itemNameList, aItemNameList, asItemTypeList, amItemTypeList, alItemTypeList, wItemNameList, wItemTypeList } from './itemList'
-import { raceNameList, statList, hfRaceNameList, hlRaceNameList, gRaceNameList, eRaceNameList, kRaceNameList, dm1RaceNameList, dm2RaceNameList, df1RaceNameList, df2RaceNameList, dlRaceNameList, lRaceNameList } from './raceList'
-import { shopNameList, classNameList, mShopNameList1, mShopNameList2, mShopNameList3, aShopNameList, wShopNameList, tShopNameList } from './nameList'
+import { mItemNameList, itemNameList, aItemNameList, asItemTypeList, amItemTypeList, alItemTypeList, wItemNameList, wItemTypeList } from './itemList.js'
+import { raceNameList, statList, hfRaceNameList, hlRaceNameList, gRaceNameList, eRaceNameList, kRaceNameList, dm1RaceNameList, dm2RaceNameList, df1RaceNameList, df2RaceNameList, dlRaceNameList, lRaceNameList } from './raceList.js'
+import { shopNameList, classNameList, mShopNameList1, mShopNameList2, mShopNameList3, aShopNameList, wShopNameList, tShopNameList } from './nameList.js'
 
 $(document).ready(function(){
     generate();
