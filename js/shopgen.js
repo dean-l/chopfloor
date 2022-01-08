@@ -142,7 +142,7 @@ function generateItems() {
     switch(Number(document.getElementById('sel1').selectedIndex)) {
         case 0:
             var html = '<table class="table"><thead><tr><th scope="col">Item</th><th scope="col">Rarity</th><th scope="col">Cost</th></thead><tbody><tr>';
-            var pohCost = Math.ceil(40 + Math.random()*2*count[0]);
+            var pohCost = Math.ceil(60 - Math.random()*2*count[0]);
             var pohNum = Math.ceil(Math.random()*count[0]);
             html += "<tr><td>" + pohNum + " x " + mcItemNameList[1][0] + "</td><td>" + mcItemNameList[1][1] + "</td><td>" + pohCost + " GP each</td></tr>";
             for (var i = 0; i < count[0]; i++) {
