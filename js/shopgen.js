@@ -27,6 +27,16 @@ function generate() {
 }
 window.generate = generate;
 
+function exportShop() {
+    var elHtml = document.getElementById('result').innerHTML;
+    var link = document.createElement('a');
+
+    link.setAttribute('download', 'shop_generator.txt');
+    link.setAttribute('href', 'data:' + 'text/plain'  +  ';charset=utf-8,' + encodeURIComponent(elHtml));
+    link.click();
+}
+window.exportShop = exportShop;
+
 function generateShop() {
     $("#shop").empty();
     var shop;
