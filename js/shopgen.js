@@ -142,29 +142,34 @@ function generateItems() {
     switch(Number(document.getElementById('sel1').selectedIndex)) {
         case 0:
             var html = '<table class="table"><thead><tr><th scope="col">Item</th><th scope="col">Rarity</th><th scope="col">Cost</th></thead><tbody><tr>';
-            var pohCost = Math.ceil(60 - Math.random()*2*count[0]);
+            var pohCost = Math.ceil(70 - 2*count[0] - Math.random()*2);
             var pohNum = Math.ceil(Math.random()*count[0]);
             html += "<tr><td>" + pohNum + " x " + mcItemNameList[1][0] + "</td><td>" + mcItemNameList[1][1] + "</td><td>" + pohCost + " GP each</td></tr>";
+            // Common
             for (var i = 0; i < count[0]; i++) {
                 var newItem = randValue(mcItemNameList);
                 var itemCost = '50 - 100GP';
                 html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
             }
+            // Uncommon
             for (var i = 0; i < count[1]; i++) {
                 var newItem = randValue(muItemNameList);
                 var itemCost = '100 - 500GP';
                 html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
             }
+            // Rare
             for (var i = 0; i < count[2]; i++) {
                 var newItem = randValue(mrItemNameList);
                 var itemCost = itemCost = '500 - 5000GP';
                 html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
             }
+            // Very Rare
             for (var i = 0; i < count[3]; i++) {
                 var newItem = randValue(mvItemNameList);
                 var itemCost = '5000 - 50000GP';
                 html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
             }
+            // Legendary
             for (var i = 0; i < count[4]; i++) {
                 var newItem = randValue(mlItemNameList);
                 var itemCost = '50000GP+';
