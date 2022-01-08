@@ -25,7 +25,6 @@ function generate() {
     generateItems();
 }
 
-
 function generateShop() {
     $("#shop").empty();
     var shop;
