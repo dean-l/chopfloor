@@ -32,7 +32,7 @@ function exportShop() {
     var link = document.createElement('a');
 
     link.setAttribute('download', 'shop_generator.html');
-    link.setAttribute('href', 'data:'+'text/plain'+';charset=utf-8,'+encodeURIComponent(elHtml));
+    link.setAttribute('href', 'data:'+'text/html'+';charset=utf-8,'+encodeURIComponent(elHtml));
     link.click();
 }
 window.exportShop = exportShop;
