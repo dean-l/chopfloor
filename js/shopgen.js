@@ -143,7 +143,7 @@ function generateItems() {
         case 0:
             var html = '<table class="table"><thead><tr><th scope="col">Item</th><th scope="col">Rarity</th><th scope="col">Cost</th></thead><tbody><tr>';
             var pohCost = Math.ceil(72 - 2*count[0] - Math.random()*4);
-            var pohNum = Math.ceil(Math.random()*2 + count[1]);
+            var pohNum = Math.ceil(Math.random()*3 + count[2]);
             html += '<tr><td>' + pohNum + ' x <a href="https://www.dndbeyond.com/search?q=' + mcItemNameList[1][0] + '" target="_blank">' + mcItemNameList[1][0] + '</a></td><td>' + mcItemNameList[1][1] + '</td><td>' + pohCost + ' GP each</td></tr>';
             // Common
             for (var i = 0; i < count[0]; i++) {
