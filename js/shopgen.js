@@ -129,43 +129,43 @@ function generateItems() {
     var count;
     switch(Number(document.getElementById('sel4').selectedIndex)) {
         case 0:
-            count = 5;
+            count = [3, 2, 1, 1, 0];
             break;
         case 1:
-            count = 10;
+            count = [6, 5, 2, 2, 1];;
             break
         case 2:
-            count = 25;
+            count = [10, 8, 4, 3, 2];
             break;
     }
     var shopClass = Number(document.getElementById('sel3').selectedIndex);
     switch(Number(document.getElementById('sel1').selectedIndex)) {
         case 0:
             var html = '<table class="table"><thead><tr><th scope="col">Item</th><th scope="col">Rarity</th><th scope="col">Cost</th></thead><tbody><tr>';
-            var pohCost = Math.ceil(55 + Math.random()*10);
-            var pohNum = Math.ceil(Math.random()*2+2);
+            var pohCost = Math.ceil(40 + Math.random()*2*count[0]);
+            var pohNum = Math.ceil(Math.random()*count[0]);
             html += "<tr><td>" + pohNum + " x " + mcItemNameList[1][0] + "</td><td>" + mcItemNameList[1][1] + "</td><td>" + pohCost + " GP each</td></tr>";
-            for (var i = 0; i < count; i++) {
+            for (var i = 0; i < count[0]; i++) {
                 var newItem = randValue(mcItemNameList);
                 var itemCost = '50 - 100GP';
                 html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
             }
-            for (var i = 0; i < count; i++) {
+            for (var i = 0; i < count[1]; i++) {
                 var newItem = randValue(muItemNameList);
                 var itemCost = '100 - 500GP';
                 html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
             }
-            for (var i = 0; i < count; i++) {
+            for (var i = 0; i < count[2]; i++) {
                 var newItem = randValue(mrItemNameList);
                 var itemCost = itemCost = '500 - 5000GP';
                 html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
             }
-            for (var i = 0; i < count; i++) {
+            for (var i = 0; i < count[3]; i++) {
                 var newItem = randValue(mvItemNameList);
                 var itemCost = '5000 - 50000GP';
                 html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
             }
-            for (var i = 0; i < count; i++) {
+            for (var i = 0; i < count[4]; i++) {
                 var newItem = randValue(mlItemNameList);
                 var itemCost = '50000GP+';
                 html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '" target="_blank">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
