@@ -184,10 +184,10 @@ function generateItems() {
                     case "Legendary":
                         itemCost = '50000GP+';
                         break;
-                    }
+                }
                 //var calcCost = parseFloat(((itemCost*0.8) + (Math.random()*itemCost*0.4)).toPrecision(2));
 
-                html += "<tr><td>" + newItem[0] + "</td><td>" + newItem[1] + "</td><td>" + itemCost + "</td></tr>";
+                html += '<tr><td><a href="https://www.dndbeyond.com/search?q=' + newItem[0] + '">' + newItem[0] + '</a></td><td>' + newItem[1] + '</td><td>' + itemCost + '</td></tr>';
             }
             html += '</tbody></table>';
             break;
