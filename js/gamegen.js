@@ -18,10 +18,10 @@ function randomise() {
 window.randomise = randomise;
 
 function exportGame() {
-    var elHtml = document.getElementById('result').innerHTML;
+    var elHtml = document.getElementById('game').innerHTML;
     var link = document.createElement('a');
 
-    link.setAttribute('download', 'game_generator' + new Date() + '.html');
+    link.setAttribute('download', 'game_generator.html');
     link.setAttribute('href', 'data:'+'text/html'+';charset=utf-8,'+encodeURIComponent(elHtml));
     link.click();
 }
