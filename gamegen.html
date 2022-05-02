@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>One-Shot Generator - Chop Floor</title>
+		<link rel="stylesheet" type="text/css" href="css/gamegen.css">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script type="module" src="js/gamegen.js"></script> 
+        <script type="module" src="js/itemList.js"></script> 
+        <script type="module" src="js/nameList.js"></script> 
+        <script type="module" src="js/raceList.js"></script> 
+	</head>
+	<body>
+        <div id="frame" class="container">
+            <div id="content" class="container">
+                <div id="banner" class="row">
+                    <div class="col-2">
+                        <div>
+                            <a href="index.html"><img id="logo" src="images/logo_main.png"></a>
+                        </div>
+                    </div>
+                    <div id="title" class="col">
+                        <h1>One-Shot Generator - Chop Floor</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h3>A D&ampD 5e one-shot generator for 4-6 3rd level characters</h3>
+                    </div>
+                </div>
+                <button type="button" class="btn" onclick="randomise()">Randomise</button>
+                <button type="button" class="btn" onclick="exportGame()">Export to File</button>
+                <hr>
+                <div>
+                    <div id="gameTitle"></div>
+                    <h3>Encounter 1</h3>
+                    <div class="encounter">
+                        <div id="encounter1"></div>
+                        <button type="button" class="btn genButton" onclick="newEncounter('encounter1')">New Encounter</button>
+                    </div>
+                    <h3>Encounter 2</h3>
+                    <div class="encounter">
+                        <div id="encounter2"></div>
+                        <button type="button" class="btn genButton" onclick="newEncounter('encounter2')">New Encounter</button>
+                    </div>
+                    <h3>Encounter 3</h3>
+                    <div class="encounter">
+                        <div id="encounter3"></div>
+                        <button type="button" class="btn genButton" onclick="newEncounter('encounter3')">New Encounter</button>
+                    </div>
+                </div>
+                <hr>
+                <p>Dean Langton - 2018</p>
+            </div>
+		</div>
+	</body>
+<html>
