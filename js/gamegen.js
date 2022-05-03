@@ -86,6 +86,7 @@ function randomEasyEncounter() {
             html = '<h5>2x <a href="https://www.dndbeyond.com/monsters/' + monster.replace(/ /g, "-") + '" target="_blank">' + monster + '</a> (CR 2)</h5>';
             break;
     }
+    html.concat('<p>Treasure: None</p>');
     $("#encounter1").append(html);
     return monster;
 }
