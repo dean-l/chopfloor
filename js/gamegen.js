@@ -1,5 +1,6 @@
 import { raceNameList, statList, hfRaceNameList, hlRaceNameList, gRaceNameList, eRaceNameList, kRaceNameList, dm1RaceNameList, dm2RaceNameList, df1RaceNameList, df2RaceNameList, dlRaceNameList, lRaceNameList } from './raceList.js'
 import { monsterListQuater, monsterListHalf, monsterList1, monsterList2, monsterList3, monsterList4, monsterList5 } from './monsterList.js'
+import { mcItemNameList, muItemNameList } from './itemList.js'
 
 $(document).ready(function(){
     randomise()
@@ -86,7 +87,7 @@ function randomEasyEncounter() {
             html = '<h5>2x <a href="https://www.dndbeyond.com/monsters/' + monster.replace(/ /g, "-") + '" target="_blank">' + monster + '</a> (CR 2)</h5>';
             break;
     }
-    html = html.concat('<p>Treasure: None</p>');
+    html = html.concat(`<p>Treasure: ${randValue(mcItemNameList)[0]}</p>`);
     $("#encounter1").append(html);
     return monster;
 }
