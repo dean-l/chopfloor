@@ -115,6 +115,8 @@ function randomHardEncounter() {
             var html = '<h5>1x <a href="https://www.dndbeyond.com/monsters/' + monster.replace(/ /g, "-") + '" target="_blank">' + monster + '</a> (CR 5, Downscale)</h5>';
             break;
     }
+    var treasure = randValue(muItemNameList)[0];
+    html = html.concat('<p>Treasure: <a href="https://www.dndbeyond.com/search?q=' + treasure + '" target="_blank">' + treasure + '</a></p>');
     $("#encounter3").append(html);
     return monster;
 }
