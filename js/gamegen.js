@@ -1,20 +1,25 @@
 import { raceNameList, statList, hfRaceNameList, hlRaceNameList, gRaceNameList, eRaceNameList, kRaceNameList, dm1RaceNameList, dm2RaceNameList, df1RaceNameList, df2RaceNameList, dlRaceNameList, lRaceNameList } from './raceList.js'
 import { monsterListQuater, monsterListHalf, monsterList1, monsterList2, monsterList3, monsterList4, monsterList5 } from './monsterList.js'
-import { mcItemNameList, muItemNameList } from './itemList.js'
+import { stuffList, mcItemNameList, muItemNameList, wItemNameList } from './itemList.js'
 
 $(document).ready(function(){
     randomise()
 });
+
+var monster1;
+var npc;
+var monster2;
+var title;
 
 function randomise() {
     $('#encounter1').empty();
     $('#encounter2').empty();
     $('#encounter3').empty();
     $('#gameTitle').empty();
-    var monster1 = randomEasyEncounter();
-    var npc = randomNPC();
-    var monster2 = randomHardEncounter();
-    generateTitle(monster2, npc);
+    monster1 = randomEasyEncounter();
+    npc = randomNPC();
+    monster2 = randomHardEncounter();
+    title = generateTitle(monster2, npc);
 }
 window.randomise = randomise;
 
@@ -22,7 +27,7 @@ function exportGame() {
     var elHtml = document.getElementById('game').innerHTML;
     var link = document.createElement('a');
 
-    link.setAttribute('download', 'game_generator.html');
+    link.setAttribute('download', selectedTitle + 'game_gen.html');
     link.setAttribute('href', 'data:'+'text/html'+';charset=utf-8,'+encodeURIComponent(elHtml));
     link.click();
 }
@@ -88,7 +93,11 @@ function randomEasyEncounter() {
             break;
     }
     var treasure = randValue(mcItemNameList)[0];
-    html = html.concat('<p>Treasure: <a href="https://www.dndbeyond.com/search?q=' + treasure + '" target="_blank">' + treasure + '</a></p>');
+    var stuff = randValue(stuffList);
+    html = html.concat('<p>Treasure: ');
+    html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + treasure + '" target="_blank">' + treasure + '</a>, ');
+    html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + stuff + '" target="_blank">' + stuff + '</a>, ');
+    html = html.concat((Math.floor(Math.random()*12)+4) +' gp</p>');
     $("#encounter1").append(html);
     return monster;
 }
@@ -116,7 +125,11 @@ function randomHardEncounter() {
             break;
     }
     var treasure = randValue(muItemNameList)[0];
-    html = html.concat('<p>Treasure: <a href="https://www.dndbeyond.com/search?q=' + treasure + '" target="_blank">' + treasure + '</a></p>');
+    var weapon = randValue(wItemNameList)[0];
+    html = html.concat('<p>Treasure: ');
+    html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + treasure + '" target="_blank">' + treasure + '</a>, ');
+    html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + weapon + '" target="_blank">' + weapon + '</a>, ');
+    html = html.concat((Math.floor(Math.random()*30)+7) +' gp</p>');
     $("#encounter3").append(html);
     return monster;
 }
@@ -137,7 +150,9 @@ function generateTitle(monster, npc) {
         `${npc}'s Job`,
         `${npc}'s Hunt`,
     ];
-    $("#gameTitle").append('<h1>'+titles[Math.floor(Math.random() * titles.length)]+'</h1>');
+    var selectedTitle = titles[Math.floor(Math.random() * titles.length)];
+    $("#gameTitle").append('<h1>' + selectedTitle + '</h1>');
+    return selectedTitle;
 }
 
 function newEncounter(encounterId) {
