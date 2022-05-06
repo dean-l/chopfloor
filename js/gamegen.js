@@ -1,21 +1,25 @@
 import { raceNameList, statList, hfRaceNameList, hlRaceNameList, gRaceNameList, eRaceNameList, kRaceNameList, dm1RaceNameList, dm2RaceNameList, df1RaceNameList, df2RaceNameList, dlRaceNameList, lRaceNameList } from './raceList.js'
 import { monsterListQuater, monsterListHalf, monsterList1, monsterList2, monsterList3, monsterList4, monsterList5 } from './monsterList.js'
 import { stuffList, mcItemNameList, muItemNameList, wItemNameList } from './itemList.js'
+import { plotHookLocations, plotHookReasons } from './hookList.js'
 
 $(document).ready(function(){
     randomise()
 });
 
+var plotHook;
 var monster1;
 var npc;
 var monster2;
 var title;
 
 function randomise() {
+    $('#plotHook').empty();
     $('#encounter1').empty();
     $('#encounter2').empty();
     $('#encounter3').empty();
     $('#gameTitle').empty();
+    plotHook = randomPlotHook();
     monster1 = randomEasyEncounter();
     npc = randomNPC();
     monster2 = randomHardEncounter();
@@ -27,13 +31,17 @@ function exportGame() {
     var elHtml = document.getElementById('game').innerHTML;
     var link = document.createElement('a');
 
-    link.setAttribute('download', selectedTitle + 'game_gen.html');
+    link.setAttribute('download', title.replaceAll(" ", "_").toLowerCase() + '_game_gen.html');
     link.setAttribute('href', 'data:'+'text/html'+';charset=utf-8,'+encodeURIComponent(elHtml));
     link.click();
 }
 window.exportGame = exportGame;
 
-
+function randomPlotHook () {
+    var hook = '<p>You all meet...</p><h5>' + randValue(plotHookLocations) + ' ' + randValue(plotHookReasons) + '</h5>';
+    $("#plotHook").append(hook);
+    return hook;
+}
 function randomNPC() {
     var race = randIndex(raceNameList);
     var fullName;
@@ -66,6 +74,7 @@ function randomNPC() {
             fullName = randValue(hfRaceNameList) + " " + randValue(hlRaceNameList);
     }
     var html = '<h5>Name: ' + fullName + "</h5><h5>Race: " + raceNameList[race] + "</h5><h5>Temperament: " + randValue(statList) + " and " + randValue(statList) + "</h5>";
+    html = html.concat("<h6>Other NPC's: " + randValue(hlRaceNameList) + ", " + randValue(hfRaceNameList) + ", " + randValue(eRaceNameList) + ", " + randValue(dlRaceNameList) + ", " + randValue(lRaceNameList) + ", ");
     $("#encounter2").append(html);
     return fullName;
 }
@@ -157,6 +166,10 @@ function generateTitle(monster, npc) {
 
 function newEncounter(encounterId) {
     switch (encounterId) {
+        case "plotHook":
+            $('#plotHook').empty();
+            var plotHook = randomPlotHook();
+            break;
         case "encounter1":
             $('#encounter1').empty();
             var monster = randomEasyEncounter();
