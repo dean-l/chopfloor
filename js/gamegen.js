@@ -1,6 +1,6 @@
 import { raceNameList, statList, hfRaceNameList, hlRaceNameList, gRaceNameList, eRaceNameList, kRaceNameList, dm1RaceNameList, dm2RaceNameList, df1RaceNameList, df2RaceNameList, dlRaceNameList, lRaceNameList } from './raceList.js'
 import { monsterListQuater, monsterListHalf, monsterList1, monsterList2, monsterList3, monsterList4, monsterList5 } from './monsterList.js'
-import { stuffList, mcItemNameList, muItemNameList, wItemNameList } from './itemList.js'
+import { stuffList, tItemNameList, mcItemNameList, muItemNameList, wItemNameList } from './itemList.js'
 import { plotHookLocations, plotHookReasons } from './hookList.js'
 import { placeListStart, placeListEnd, placeIndustry } from './placeList.js'
 
@@ -125,7 +125,10 @@ function randomEasyEncounter() {
     html = html.concat('<p>Treasure: ');
     html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + treasure + '" target="_blank">' + treasure + '</a>, ');
     html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + stuff + '" target="_blank">' + stuff + '</a>, ');
-    html = html.concat((Math.floor(Math.random()*12)+4) +' gp</p>');
+    // gold
+    // html = html.concat((Math.floor(Math.random()*12)+4) +' gp</p>');
+    // item
+    html = html.concat(randValue(tItemNameList) + '</p>');
     $("#encounter1").append(html);
     return monster;
 }
@@ -157,7 +160,10 @@ function randomHardEncounter() {
     html = html.concat('<p>Treasure: ');
     html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + treasure + '" target="_blank">' + treasure + '</a>, ');
     html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + weapon + '" target="_blank">' + weapon + '</a>, ');
-    html = html.concat((Math.floor(Math.random()*30)+7) +' gp</p>');
+    // gold
+    // html = html.concat((Math.floor(Math.random()*30)+7) +' gp</p>');
+    // item
+    html = html.concat(randValue(tItemNameList) + ', ' + randValue(tItemNameList) + '</p>');
     $("#encounter2").append(html);
     return monster;
 }
