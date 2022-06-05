@@ -93,7 +93,6 @@ function randomNPC() {
             fullName = randValue(hfRaceNameList) + " " + randValue(hlRaceNameList);
     }
     var html = '<p>There we meet...</p><h5>' + fullName + ", a " + randValue(statList) + " and " + randValue(statList) + ' ' + raceNameList[race] + "</h5>";
-    html = html.concat("<h6>Other NPC's: " + randValue(hlRaceNameList) + ", " + randValue(hfRaceNameList) + ", " + randValue(eRaceNameList) + ", " + randValue(dlRaceNameList) + ", " + randValue(lRaceNameList) + ", ");
     $("#people").append(html);
     return fullName;
 }
@@ -122,7 +121,7 @@ function randomEasyEncounter() {
     }
     var treasure = randValue(mcItemNameList)[0];
     var stuff = randValue(stuffList);
-    html = html.concat('<p>Treasure: ');
+    html = html.concat('<p>Treasure: <strong>Inspiration</strong>, ');
     html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + treasure + '" target="_blank">' + treasure + '</a>, ');
     html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + stuff + '" target="_blank">' + stuff + '</a>, ');
     // gold
@@ -169,7 +168,8 @@ function randomHardEncounter() {
 }
 
 function randomWords() {
-    var wordString = '<p>' + createWord() + ', ' + createWord() + ', ' + createWord() + ', ' + createWord() + '</p>';
+    var wordString = '<p>Words: ' + createWord() + ', ' + createWord() + ', ' + createWord() + ', ' + createWord() + '</p>';
+    wordString = wordString.concat("<p>Names: " + randValue(hlRaceNameList) + ", " + randValue(hfRaceNameList) + ", " + randValue(eRaceNameList) + ", " + randValue(dlRaceNameList) + ", " + randValue(lRaceNameList) + "</p>");
     $("#words").append(wordString);
     $("#words").css("textTransform", "capitalize");
     return wordString;
