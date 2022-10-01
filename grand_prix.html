@@ -1,0 +1,211 @@
+<html>
+	<head>
+		<title>Grand Prix - Chop Floor</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script type="text/javascript"> 
+
+            const trackList = [
+                {
+                    name: 'Schlangenring',
+                    change: 'drivers',
+                    value: -2
+                },
+                {
+                    name: 'La Curva',
+                    change: 'drivers',
+                    value: 1
+                },
+                {
+                    name: 'Saint Varan',
+                    change: '1fail',
+                    value: 0
+                },
+                {
+                    name: 'Altonfield Downs',
+                    change: 'engineering',
+                    value: -1
+                },
+                {
+                    name: 'Nichibotsu Mountain Circuit',
+                    change: 'management',
+                    value: -1
+                },
+                {
+                    name: 'Confluência dos Rios',
+                    change: 'drivers',
+                    value: -1
+                },
+                {
+                    name: 'The Duchy',
+                    change: 'management',
+                    value: 1
+                },
+                {
+                    name: 'Alsahra Alhamra',
+                    change: 'engineering',
+                    value: 1
+                }
+            ]
+
+            function getTeams() {
+                var teamList = [];
+                for (let i = 1; i <= 5; i++) {
+                    var team = {
+                        name: $(`#${i}name`).text(),
+                        engineering: Number.parseInt(document.getElementById(`${i}e`).value),
+                        drivers: Number.parseInt(document.getElementById(`${i}d`).value),
+                        management: Number.parseInt(document.getElementById(`${i}m`).value),
+                    }
+                    teamList = teamList.concat(team);
+                }
+                return teamList;
+            }
+            
+            function runRace(){
+                var teamList = this.getTeams();
+                var trackIndex = document.getElementById('track-select').selectedIndex;
+                var track = trackList[trackIndex];
+                $("#result-frame").empty();
+                var engMod = 0;
+                var driMod = 0;
+                var failOn1 = false;
+                if (track.change === 'engineering') {
+                    engMod = track.value;
+                }
+                if (track.change === 'drivers') {
+                    driMod = track.value;
+                }
+                if (track.change === '1fail') {
+                    failOn1 = true;
+                }
+                $("#result-frame").append(`<h3>${track.name} (E${engMod}, D${driMod}, Fail on 1's ${failOn1}): Race Run</h3>`); 
+                teamList.forEach((team, teamIndex) => {
+                    var homeTrack = teamIndex === trackIndex ? 1 : 0;
+                    var teamScore = `<p>${team.name}: `;
+                    var successes = 0;
+                    var failures = 0;
+                    var homeTrack = teamIndex === trackIndex ? 1 : 0;
+                    for (let i = 0; i < (team.engineering + engMod); i++) {
+                        var roll = Math.ceil(Math.random() * 6);
+                        teamScore = `${teamScore.concat(roll)}, `;
+                        if (roll <= (team.drivers + driMod + homeTrack)) {
+                            if (roll === 1 && failOn1) {
+                                failures = ++failures
+                            } else {
+                                successes = ++successes
+                            }
+                        } else {
+                            failures = ++failures
+                        }
+                    }
+                    $("#result-frame").append(`${teamScore}</p>`); 
+                    $("#result-frame").append(`<p>${successes} Successes, ${failures} Failures</p>`); 
+                    $("#result-frame").append(`<hr>`); 
+                });
+            }
+        </script>
+        <style>
+            .form-inline label {
+                padding-left: 20px;
+                padding-right: 10px;
+            }
+        </style>
+	</head>
+	<body>
+		<div id="frame" class="container">
+            <div id="content" class="container">
+                <div id="banner" class="row">
+                    <div class="col-2">
+                        <div>
+                            <a href="index.html"><img id="logo" src="images/logo_main.png"></a>
+                        </div>
+                    </div>
+                    <div id="title" class="col">
+                        <h1>Grand Prix - Chop Floor</h1>
+                    </div>
+                </div>
+                <h4>Teams</h4>
+                <form class="form-control" id="team-select" multiple="true">
+                    <div class="form-group">
+                        <h5 id="1name" style="color: black;">Einwald-Muller GmbH</h5>
+                        <div class="form-inline">
+                            <label>Engineering</label>
+                            <input type="number" id="1e" name="1e" value=3><br>
+                            <label>Drivers</label>
+                            <input type="number" id="1d" name="1d" value=3><br>
+                            <label>Management</label>
+                            <input type="number" id="1m" name="1m" value=3><br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h5 id="2name" style="color: red;">Givoretti Corse</h5>
+                        <div class="form-inline">
+                            <label>Engineering</label>
+                            <input type="number" id="2e" name="2e" value=1><br>
+                            <label>Drivers</label>
+                            <input type="number" id="2d" name="2d" value=5><br>
+                            <label>Management</label>
+                            <input type="number" id="2m" name="2m" value=3><br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h5 id="3name" style="color: blue;">Rivière l’ Automobile</h5>
+                        <div class="form-inline">
+                            <label>Engineering</label>
+                            <input type="number" id="3e" name="3e" value=1><br>
+                            <label>Drivers</label>
+                            <input type="number" id="3d" name="3d" value=4><br>
+                            <label>Management</label>
+                            <input type="number" id="3m" name="3m" value=4><br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h5 id="4name" style="color: green;">Hawthorne Motor Company</h5>
+                        <div class="form-inline">
+                            <label>Engineering</label>
+                            <input type="number" id="4e" name="4e" value=2><br>
+                            <label>Drivers</label>
+                            <input type="number" id="4d" name="4d" value=5><br>
+                            <label>Management</label>
+                            <input type="number" id="4m" name="4m" value=2><br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h5 id="5name" style="color: gray; ">Tokoyami</h5>
+                        <div class="form-inline">
+                            <label>Engineering</label>
+                            <input type="number" id="5e" name="5e" value=3><br>
+                            <label>Drivers</label>
+                            <input type="number" id="5d" name="5d" value=4><br>
+                            <label>Management</label>
+                            <input type="number" id="5m" name="5m" value=2><br>
+                        </div>
+                    </div>
+                    </form>
+                <h4>Track</h4>
+                <select class="form-control" id="track-select">
+                    <option value="1" style="color: black;">Schlangenring</option>
+                    <option value="2" style="color: red;">La Curva</option>
+                    <option value="3" style="color: blue;">Saint Varan</option>
+                    <option value="4" style="color: green;">Altonfield Downs</option>
+                    <option value="5" style="color: grey;">Nichibotsu Mountain Circuit</option>
+                    <option value="6" style="color: yellow;">Confluência dos Rios</option>
+                    <option value="7" style="color: purple;">The Duchy</option>
+                    <option value="8" style="color: orange;">Alsahra' Alhamra'</option>
+                </select>
+                <div>
+                    <button type="button" class="btn" onclick="runRace()">Race!</button>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="result-frame">
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</body>
+<html>
