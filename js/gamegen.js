@@ -1,5 +1,5 @@
 import { raceNameList, statList, hfRaceNameList, hlRaceNameList, gRaceNameList, eRaceNameList, kRaceNameList, dm1RaceNameList, dm2RaceNameList, df1RaceNameList, df2RaceNameList, dlRaceNameList, lRaceNameList } from './raceList.js'
-import { monsterListQuater, monsterListHalf, monsterList1, monsterList2, monsterList3, monsterList4, monsterList5 } from './monsterList.js'
+import { monsterListQuater, monsterListHalf, monsterList1, monsterList2, monsterList3, monsterList4, monsterList5, monsterList6, monsterList7, monsterList8, monsterList9, monsterList10, monsterList11, monsterList12 } from './monsterList.js'
 import { stuffList, tItemNameList, mcItemNameList, muItemNameList, wItemNameList } from './itemList.js'
 import { plotHookLocations, plotHookReasons } from './hookList.js'
 import { placeListStart, placeListEnd, placeIndustry } from './placeList.js'
@@ -133,6 +133,7 @@ function randomEasyEncounter() {
 }
 
 function randomHardEncounter() {
+    var playerLevel = document.getElementById("level").value;
     var type = randValue(['3', '3x2', '4', '5'])
     var monster;
     var html;
@@ -157,10 +158,18 @@ function randomHardEncounter() {
     var treasure = randValue(muItemNameList)[0];
     var weapon = randValue(wItemNameList)[0];
     html = html.concat('<p>Treasure: ');
+    //html = html.concat(`${document.getElementById('treasure').value}gp, `);
     html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + treasure + '" target="_blank">' + treasure + '</a>, ');
     html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + weapon + '" target="_blank">' + weapon + '</a>, ');
+    if (playerLevel > 4) {
+        var treasure = randValue(mcItemNameList)[0];
+        html = html.concat('<a href="https://www.dndbeyond.com/search?q=' + treasure + '" target="_blank">' + treasure + '</a>, ');
+    }
+    if (playerLevel > 7) {
+        
+    }
     // gold
-    // html = html.concat((Math.floor(Math.random()*30)+7) +' gp</p>');
+    html = html.concat((Math.floor(Math.random()*30)+(20*playerLevel) +' gp</p>'));
     // item
     html = html.concat(randValue(tItemNameList) + ', ' + randValue(tItemNameList) + '</p>');
     $("#encounter2").append(html);

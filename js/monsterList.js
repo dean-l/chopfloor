@@ -11,3 +11,27 @@ export const monsterList3 = ["Ankylosaurus", "Archer", "Basilisk", "Bearded Devi
 export const monsterList4 = ["Babau", "Banshee", "Barghest", "Black Pudding", "Bone Naga", "Chuul", "Couatl", "Deathlock", "Dybbuk", "Elephant", "Ettin", "Flameskull", "Ghost", "Girallon", "Gnoll Fang of Yeenoghu", "Guardian Wolf", "Helmed Horror", "Hobgoblin Devastator", "Incubus", "Iron Cobra", "Lamia", "Lizard King/Queen", "Merregon", "Neogi Master", "Ogre Battering Ram", "Orc Blade of Ilneval", "Orc War Chief", "Red Dragon Wyrmling", "Shadow Demon", "Stegosaurus", "Stone Defender", "Succubus", "Warlock of the Archfey", "Wereboar", "Weretiger", "Yeth Hound", "Yuan-ti Mind Whisperer", "Yuan-ti Nightmare Speaker"];
 
 export const monsterList5 = ["Adult Oblex", "Air Elemental", "Allip", "Banderhobb", "Barbed Devil", "Barlgura", "Beholder Zombie", "Brontosaurus", "Bulette", "Cambion", "Catoblepas", "Drow Elite Warrior", "Dust Devil", "Earth Elemental", "Enchanter", "Fire Elemental", "Flesh Golem", "Giant Crocodile", "Giant Shark", "Gladiator", "Gorgon", "Half-Red Dragon Veteran", "Hill Giant", "Kraken Priest", "Kruthik Hive Lord", "Master Thief", "Mezzoloth", "Mindwitness", "Night Hag", "Oaken Bolter", "Otyugh", "Red Slaad", "Revenant", "Roper", "Sahuagin Baron", "Salamander", "Shambling Mound", "Spawn of Kyuss", "Star Spawn Mangler", "Swarm of Cranium Rats", "Tanarukk", "Tlincalli", "Transmuter", "Triceratops", "Troll", "Umber Hulk", "Unicorn", "Vampire Spawn", "Water Elemental", "Werebear", "Wood Woad", "Wraith", "Xorn", "Young Remorhaz"];
+
+export const monsterList6 = ["Annis Hag", "Bodak", "Chasme", "Chimera", "Conjurer Wizard", "Cyclops", "Drider", "Duergar Warlord", "Galeb Duhr", "Gauth", "Githzerai Zerth", "Hobgoblin Warlord", "Invisible Stalker", "Kuo-toa Archpriest", "Mage", "Mammoth", "Medusa", "Vrock", "White Abishai", "Wyvern", "Young Brass Dragon", "Young White Dragon,"];
+
+export const monsterList7 = ["Air Elemental Myrmidon", "Armanite", "Bheur Hag", "Black Abishai", "Blue Slaad", "Blue Slaad (control gem variant)", "Dhergoloth", "Draegloth", "Drow Mage", "Earth Elemental Myrmidon", "Fire Elemental Myrmidon", "Giant Ape", "Grick Alpha", "Korred", "Lost Sorrowsworn", "Maurezhi", "Mind Flayer", "Night Hag (Coven Variant)", "Oni", "Shadar-kai Shadow Dancer", "Shield Guardian", "Stone Giant", "Venom Troll", "Warlock of the Fiend", "Water Elemental Myrmidon", "Young Black Dragon", "Young Copper Dragon", "Yuan-ti Abomination"];
+
+export const monsterList8 = ["Assassin", "Blackguard", "Canoloth", "Chain Devil", "Cloaker", "Corpse Flower", "Deathlock Mastermind", "Diviner Wizard", "Drow Priestess of Lolth", "Fomorian", "Frost Giant", "Githyanki Knight", "Green Slaad", "Hezrou", "Howler", "Hydra", "Mind Flayer Arcanist", "Shoosuva", "Spirit Naga", "Sword Wraith Commander", "Tyrannosaurus Rex", "Young Bronze Dragon", "Young Green Dragon"];
+
+export const monsterList9 = ["Abjurer Wizard", "Abominable Yeti", "Bone Devil", "Champion", "Clay Golem", "Cloud Giant", "Drow House Captain", "Evoker Wizard", "Fire Giant", "Flind", "Frost Salamander", "Glabrezu", "Gray Slaad", "Hydroloth", "Lonely Sorrowsworn", "Necromancer Wizard", "Nycaloth", "Rot Troll", "Shadar-kai Gloom Weaver", "Treant", "Ulitharid", "War Priest", "Young Blue Dragon", "Young Silver Dragon"];
+
+export const monsterList10 = ["Aboleth", "Alhoon", "Autumn Eladrin", "Death Kiss", "Death Slaad", "Deva", "Elder Oblex", "Froghemoth", "Githyanki Gish", "Githzerai Enlightened", "Guardian Naga", "Orthon", "Spring Eladrin", "Star Spawn Hulk", "Stone Giant Dreamwalker", "Stone Golem", "Summer Eladrin", "Winter Eladrin", "Yochlol", "Young Gold Dragon", "Young Red Dragon"];
+
+export const monsterList11 = ["Alkilith", "Balhannoth", "Behir", "Cloud Giant Smiling One", "Dao", "Djinni", "Drow Shadowblade", "Efreeti", "Gynosphinx", "Horned Devil", "Hungry Sorrowsworn", "Marid", "Morkoth", "Remorhaz", "Roc", "Shadar-kai Soul Monger", "Spirit Troll", "Yagnoloth"];
+
+export const monsterList12 = ["Arcanaloth", "Archdruid", "Archmage", "Boneclaw", "Duergar Despot", "Eidolon", "Erinyes", "Frost Giant Everlasting One", "Githyanki Kith’rak", "Gray Render", "Ki-rin", "Oinoloth", "Sacred Statue", "Warlord", "Yuan-ti Anathema"];
+
+export const monsterList13 = ["Adult Brass Dragon", "Adult White Dragon", "Angry Sorrowsworn", "Beholder", "Devourer", "Dire Troll", "Drow Arachnomancer", "Nalfeshnee", "Narzugon", "Neothelid", "Rakshasa", "Star Spawn Seer", "Ultroloth", "Vampire", "Wastrilith", "Young Red Shadow Dragon"];
+
+export const monsterList14 = ["Adult Black Dragon", "Adult Copper Dragon", "Cadaver Collector", "Death Tyrant", "Drow Inquisitor", "Elder Brain", "Fire Giant Dreadnought", "Githyanki Supreme Commander", "Ice Devil", "Retriever"];
+
+export const monsterList15 = ["Adult Bronze Dragon", "Adult Green Dragon", "Green Abishai", "Mummy Lord", "Nabassu", "Purple Worm", "Skull Lord", "Vampire Spellcaster", "Vampire Warrior"];
+
+export const monsterList16 = ["Adult Blue Dragon", "Adult Silver Dragon", "Githzerai Anarch", "Hellfire Engine", "Iron Golem", "Marilith", "Phoenix", "Planetar", "Star Spawn Larva Mage", "Steel Predator", "Storm Giant Quintessent", "Titivilus"];
+
+export const monsterList17 = ["Adult Blue Dracolich", "Adult Gold Dragon", "Adult Red Dracolich", "Adult Red Dragon", "Androsphinx", "Blue Abishai", "Death Knight", "Dragon Turtle", "Goristro", "Nagpa"];

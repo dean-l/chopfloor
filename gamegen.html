@@ -25,7 +25,23 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <h3>A D&ampD 5e one-shot generator for 4-6 3rd level characters</h3>
+                        <div class="row">
+                            <h3>A D&ampD 5e one-shot generator for</h3>
+                            <select name="selected-players" id="players">
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <select name="selected-level" id="level">
+                                <option value="3">3rd</option>
+                                <option value="7">7th</option>
+                            </select>
+                            <h3>level characters.</h3>
+                            <select name="selected-treasure" id="treasure">
+                                <option value="300">300gp</option>
+                                <option value="400">400gp</option>
+                            </select>
+                            <h3>of treasure</h3>
+                        </div>
                     </div>
                 </div>
                 <button type="button" class="btn" onclick="randomise()">Randomise</button>
